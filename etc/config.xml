@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <magepow_categories>
+            <general>
+                <enabled>1</enabled>
+            </general>
+            <category_page>
+                <layout>grid</layout>
+                <sort_attribute>position</sort_attribute>
+                <heading>Categories</heading>
+                <description>0</description>
+                <exclude_category></exclude_category>
+            </category_page>
+            <home_page>
+                <layout>grid</layout>
+                <sort_attribute>position</sort_attribute>
+                <heading>Categories</heading>
+                <description>0</description>
+                <category_select></category_select>
+            </home_page>
+        </magepow_categories>
+    </default>
+</config>
