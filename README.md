@@ -31,6 +31,8 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
  * Select the categories displayed on the home page.
 ### This Is Result In Frontend
  ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/cat3.PNG)
+ 
+ #### In categories page
  ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/Cat4.PNG)
 [![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)]()
 
