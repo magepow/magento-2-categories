@@ -26,6 +26,7 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
  * Ability to show or not category description.
  * Select categories that do not display subcategories.
  ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/Cat2.PNG)
+ 
  The home page also has the same settings as the category page, except that the home page can choose the display categories instead of excluding the display category.
  * Select the categories displayed on the home page.
 ### This Is Result In Frontend
