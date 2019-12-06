@@ -8,7 +8,7 @@ Run the following command in Magento 2 root folder:
 
 `php bin/magento setup:upgrade`
 
-`php bin/magento setup:static-content:deploy`
+`php bin/magento setup:static-content:deploy -f`
 ## 2. Magepow Categories user guide
 **Magepow Categories** Allow customer access the categories quickly and conveniently, stimulating users to click on the categories because of the beautiful interface.
 ### General Configuration
@@ -34,6 +34,10 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
  
  #### In categories page
  ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/Cat4.PNG)
-[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)]()
+[![Latest Stable Version](https://img.shields.io/packagist/v/techdivision/import.svg?style=flat-square)](https://packagist.org/packages/techdivision/import) 
+ [![Total Downloads](https://img.shields.io/packagist/dt/techdivision/import.svg?style=flat-square)](https://packagist.org/packages/techdivision/import)
+ [![License](https://img.shields.io/packagist/l/techdivision/import.svg?style=flat-square)](https://packagist.org/packages/techdivision/import)
+ [![Build Status](https://img.shields.io/travis/techdivision/import/master.svg?style=flat-square)](http://travis-ci.org/techdivision/import)
+ [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/techdivision/import/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/techdivision/import/?branch=master) [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/techdivision/import/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/techdivision/import/?branch=master)
 
 
