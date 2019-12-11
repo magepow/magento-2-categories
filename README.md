@@ -34,7 +34,7 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
  
  #### In categories page
  ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/Cat4.PNG)
-[![Latest Stable Version](https://poser.pugx.org/magepow/magento2-categories/v/stable)](https://packagist.org/packages/magepow/magento2-categories)
-[![Total Downloads](https://poser.pugx.org/magepow/magento2-categories/downloads)](https://packagist.org/packages/magepow/magento2-categories)
+[![Latest Stable Version](https://poser.pugx.org/magepow/categories/v/stable)](https://packagist.org/packages/magepow/categories)
+[![Total Downloads](https://poser.pugx.org/magepow/categories/downloads)](https://packagist.org/packages/magepow/categories)
 
 
