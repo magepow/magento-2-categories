@@ -8,7 +8,7 @@ Run the following command in Magento 2 root folder:
 
 `php bin/magento setup:upgrade`
 
-`php bin/magento setup:static-content:deploy`
+`php bin/magento setup:static-content:deploy -f`
 ## 2. Magepow Categories user guide
 **Magepow Categories** Allow customer access the categories quickly and conveniently, stimulating users to click on the categories because of the beautiful interface.
 ### General Configuration
@@ -26,11 +26,15 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
  * Ability to show or not category description.
  * Select categories that do not display subcategories.
  ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/Cat2.PNG)
+ 
  The home page also has the same settings as the category page, except that the home page can choose the display categories instead of excluding the display category.
  * Select the categories displayed on the home page.
 ### This Is Result In Frontend
  ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/cat3.PNG)
+ 
+ #### In categories page
  ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/Cat4.PNG)
-[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)]()
+[![Latest Stable Version](https://poser.pugx.org/magepow/categories/v/stable)](https://packagist.org/packages/magepow/categories)
+[![Total Downloads](https://poser.pugx.org/magepow/categories/downloads)](https://packagist.org/packages/magepow/categories)
 
 
