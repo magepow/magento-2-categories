@@ -1,5 +1,5 @@
-# Magento 2 Extension Categories
-**Categories Magento extension** (Magepow Categories Extension) for Magento allows you to have subcategories in the form of a grid or list on category pages, home page or optionally any other page via XML layout updates or CMS markup tags. Additionally, there are more than several options for customization. The subcategories block is Responsive Web Design (RWD) ready. It will recalculate itself based on the parent.
+# Magento 2 Categories Extension
+**Magento 2 Categories extension** (Magepow Categories Extension) for Magento allows you to have subcategories in the form of a grid or list on category pages, home page or optionally any other page via XML layout updates or CMS markup tags. Additionally, there are more than several options for customization. The subcategories block is Responsive Web Design (RWD) ready. It will recalculate itself based on the parent.
 ## 1. How to install Magento 2 Categories
 ### ✓ Install Magepow Categories via composer (recommend)
 Run the following command in Magento 2 root folder:
