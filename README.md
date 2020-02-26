@@ -37,29 +37,29 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
 
 **Other free extensions**
 
-☞ [Magento 2 Recent Sales Notification](https://magepow.com/magento-2-recent-sales-notification.html)
+* [Magento 2 Recent Sales Notification](https://magepow.com/magento-2-recent-sales-notification.html)
 
-☞ [Magento Categories Extension](https://magepow.com/magento-categories-extension.html)
+* [Magento Categories Extension](https://magepow.com/magento-categories-extension.html)
 
-☞ [Magento Sticky Cart](https://magepow.com/magento-sticky-cart.html)
+* [Magento Sticky Cart](https://magepow.com/magento-sticky-cart.html)
 
 **Featured Magento services**
 
-☞ [PSD to Magento 2 Theme Conversion](https://magepow.com/psd-to-magento-theme-conversion.html)
+* [PSD to Magento 2 Theme Conversion](https://magepow.com/psd-to-magento-theme-conversion.html)
 
-☞ [Magento Speed Optimization Service](https://magepow.com/magento-speed-optimization-service.html)
+* [Magento Speed Optimization Service](https://magepow.com/magento-speed-optimization-service.html)
 
-☞ [Magento Security Patch Installation](https://magepow.com/magento-security-patch-installation.html)
+* [Magento Security Patch Installation](https://magepow.com/magento-security-patch-installation.html)
 
-☞ [Magento Website Maintenance Service](https://magepow.com/website-maintenance-service.html)
+* [Magento Website Maintenance Service](https://magepow.com/website-maintenance-service.html)
 
-☞ [Magento Professional Installation Service](https://magepow.com/professional-installation-service.html)
+* [Magento Professional Installation Service](https://magepow.com/professional-installation-service.html)
 
-☞ [Magento Upgrade Service](https://magepow.com/magento-upgrade-service.html)
+* [Magento Upgrade Service](https://magepow.com/magento-upgrade-service.html)
 
-☞ [Customization Service](https://magepow.com/customization-service.html)
+* [Customization Service](https://magepow.com/customization-service.html)
 
-☞ [Hire Magento Developer](https://magepow.com/hire-magento-developer.html)
+* [Hire Magento Developer](https://magepow.com/hire-magento-developer.html)
 
 [![Latest Stable Version](https://poser.pugx.org/magepow/categories/v/stable)](https://packagist.org/packages/magepow/categories)
 [![Total Downloads](https://poser.pugx.org/magepow/categories/downloads)](https://packagist.org/packages/magepow/categories)
