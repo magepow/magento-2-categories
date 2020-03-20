@@ -1,0 +1,443 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magepow 
+ * @category    Magepow 
+ * @copyright   Copyright (c) 2019 Magepow (http://www.magepow.com/) 
+ * @license     http://www.magepow.com/license-agreement.html
+ * @Author: DOng NGuyen<nguyen@dvn.com>
+ * @@Create Date: 2020-01-30 10:59:34
+ * @@Modify Date: 2020-01-30 18:15:49
+ * @@Function:
+ */ -->
+ 
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Widget/etc/widget.xsd">
+    <widget id="magepow_categories" class="Magepow\Categories\Block\Widget\Categories">
+        <label translate="true">Magepow Categories Widget</label>
+        <description>Magepow Categories Widget</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" visible="true" sort_order="0" >
+                <label translate="true">Title</label>
+                <value>Magepow Categories Widget</value>
+            </parameter>
+            <parameter name="template" xsi:type="select" required="true" visible="true" sort_order="2">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="categories_widget.phtml" selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="sort_attribute" xsi:type="select" visible="true" sort_order="4"
+                source_model="Magepow\Categories\Model\Config\SortAttribute">
+                <label translate="true">The way categories are sorted.</label>
+            </parameter>
+            <parameter name="description" xsi:type="select"  visible="true" sort_order="6">
+                <label translate="true">Show Description</label>
+                <options>
+                    <option name="0" value="0">
+                        <label translate="true">No</label>
+                    </option>
+                    <option name="1" value="1" selected="true">
+                        <label translate="true">Yes</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="categories" xsi:type="multiselect" visible="true" sort_order="8" source_model="Magepow\Categories\Model\Config\Category">
+                <label translate="true">Categories</label>
+            </parameter>
+<!--             <parameter name="category" xsi:type="block" visible="true" required="true" sort_order="10">
+                <label translate="true">Category</label>
+                <block class="Magento\Catalog\Block\Adminhtml\Category\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Category...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter> -->
+            <parameter name="slide" xsi:type="select"  visible="true" sort_order="10">
+                <label translate="true">Slide</label>
+                <options>
+                    <option name="0" value="0">
+                        <label translate="true">No</label>
+                    </option>
+                    <option name="1" value="1" selected="true">
+                        <label translate="true">Yes</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="vertical" xsi:type="select"  visible="true" sort_order="15">
+                <label translate="true">Vertical</label>
+                <depends>
+                    <parameter name="slide" value="1" />
+                </depends>
+                <options>
+                    <option name="false" value="false" selected="true">
+                        <label translate="true">False</label>
+                    </option>
+                    <option name="true" value="true">
+                        <label translate="true">True</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="infinite" xsi:type="select"  visible="true" sort_order="20">
+                <label translate="true">Infinite</label>
+                <depends>
+                    <parameter name="slide" value="1" />
+                </depends>
+                <options>
+                    <option name="false" value="false">
+                        <label translate="true">False</label>
+                    </option>
+                    <option name="true" value="true" selected="true">
+                        <label translate="true">True</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="autoplay" xsi:type="select"  visible="true" sort_order="25">
+                <label translate="true">Auto Play</label>
+                <depends>
+                    <parameter name="slide" value="1" />
+                </depends>
+                <options>
+                    <option name="false" value="false">
+                        <label translate="true">False</label>
+                    </option>
+                    <option name="true" value="true" selected="true">
+                        <label translate="true">True</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="arrows" xsi:type="select"  visible="true" sort_order="30">
+                <label translate="true">Arrows</label>
+                <depends>
+                    <parameter name="slide" value="1" />
+                </depends>
+                <options>
+                    <option name="false" value="false">
+                        <label translate="true">False</label>
+                    </option>
+                    <option name="true" value="true" selected="true">
+                        <label translate="true">True</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="dots" xsi:type="select"  visible="true" sort_order="35">
+                <label translate="true">Dots</label>
+                <depends>
+                    <parameter name="slide" value="1" />
+                </depends>
+                <options>
+                    <option name="false" value="false" selected="true">
+                        <label translate="true">False</label>
+                    </option>
+                    <option name="true" value="true">
+                        <label translate="true">True</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="speed" required="true" xsi:type="text"  visible="true" sort_order="45">
+                <label translate="true">Speed</label>
+                <depends>
+                    <parameter name="slide" value="1" />
+                </depends>
+                <value>300</value>
+            </parameter>
+            <parameter name="autoplay-Speed" required="true" xsi:type="text"  visible="true" sort_order="50">
+                <label translate="true">Autoplay Speed</label>
+                <depends>
+                    <parameter name="slide" value="1" />
+                </depends>
+                <value>3000</value>
+            </parameter>
+            <parameter name="padding" required="true" xsi:type="text"  visible="true" sort_order="55">
+                <label translate="true">Padding</label>
+                <value>15</value>
+            </parameter>
+            <parameter name="rows" xsi:type="select"  visible="true" sort_order="65">
+                <label translate="true">Rows</label>
+                <depends>
+                    <parameter name="slide" value="1" />
+                </depends>
+                <options>
+                    <option name="1" value="1" selected="true">
+                        <label translate="true">1 row(s) /slider</label>
+                    </option>
+                    <option name="2" value="2">
+                        <label translate="true">2 row(s) /slider</label>
+                    </option>
+                     <option name="3" value="3">
+                        <label translate="true">3 row(s) /slider</label>
+                    </option>
+                    <option name="4" value="4">
+                        <label translate="true">4 row(s) /slider</label>
+                    </option>
+                    <option name="5" value="5">
+                        <label translate="true">5 row(s) /slider</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="mobile" xsi:type="select"  visible="true" sort_order="70">
+                <label translate="true"><![CDATA[max-width 360: ]]></label>
+                <options>
+                    <option name="1" value="1" selected="true">
+                        <label translate="true">1 item(s) /row</label>
+                    </option>
+                    <option name="2" value="2">
+                        <label translate="true">2 item(s) /row</label>
+                    </option>
+                     <option name="3" value="3">
+                        <label translate="true">3 item(s) /row</label>
+                    </option>
+                    <option name="4" value="4">
+                        <label translate="true">4 item(s) /row</label>
+                    </option>
+                    <option name="5" value="5">
+                        <label translate="true">5 item(s) /row</label>
+                    </option>
+                    <option name="6" value="6">
+                        <label translate="true">6 item(s) /row</label>
+                    </option>
+                    <option name="7" value="7">
+                        <label translate="true">7 item(s) /row</label>
+                    </option>
+                    <option name="8" value="8">
+                        <label translate="true">8 item(s) /row</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="portrait" xsi:type="select"  visible="true" sort_order="75">
+                <label translate="true"><![CDATA[max-width 480: ]]></label>
+                <options>
+                    <option name="1" value="1" selected="true">
+                        <label translate="true">1 item(s) /row</label>
+                    </option>
+                    <option name="2" value="2">
+                        <label translate="true">2 item(s) /row</label>
+                    </option>
+                     <option name="3" value="3">
+                        <label translate="true">3 item(s) /row</label>
+                    </option>
+                    <option name="4" value="4">
+                        <label translate="true">4 item(s) /row</label>
+                    </option>
+                    <option name="5" value="5">
+                        <label translate="true">5 item(s) /row</label>
+                    </option>
+                    <option name="6" value="6">
+                        <label translate="true">6 item(s) /row</label>
+                    </option>
+                    <option name="7" value="7">
+                        <label translate="true">7 item(s) /row</label>
+                    </option>
+                    <option name="8" value="8">
+                        <label translate="true">8 item(s) /row</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="landscape" xsi:type="select"  visible="true" sort_order="80">
+                <label translate="true"><![CDATA[max-width 576: ]]></label>
+                <options>
+                    <option name="1" value="1">
+                        <label translate="true">1 item(s) /row</label>
+                    </option>
+                    <option name="2" value="2" selected="true">
+                        <label translate="true">2 item(s) /row</label>
+                    </option>
+                     <option name="3" value="3">
+                        <label translate="true">3 item(s) /row</label>
+                    </option>
+                    <option name="4" value="4">
+                        <label translate="true">4 item(s) /row</label>
+                    </option>
+                    <option name="5" value="5">
+                        <label translate="true">5 item(s) /row</label>
+                    </option>
+                    <option name="6" value="6">
+                        <label translate="true">6 item(s) /row</label>
+                    </option>
+                    <option name="7" value="7">
+                        <label translate="true">7 item(s) /row</label>
+                    </option>
+                    <option name="8" value="8">
+                        <label translate="true">8 item(s) /row</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="tablet" xsi:type="select"  visible="true" sort_order="85">
+                <label translate="true"><![CDATA[max-width 768: ]]></label>
+                <options>
+                    <option name="1" value="1">
+                        <label translate="true">1 item(s) /row</label>
+                    </option>
+                    <option name="2" value="2">
+                        <label translate="true">2 item(s) /row</label>
+                    </option>
+                     <option name="3" value="3" selected="true">
+                        <label translate="true">3 item(s) /row</label>
+                    </option>
+                    <option name="4" value="4">
+                        <label translate="true">4 item(s) /row</label>
+                    </option>
+                    <option name="5" value="5">
+                        <label translate="true">5 item(s) /row</label>
+                    </option>
+                    <option name="6" value="6">
+                        <label translate="true">6 item(s) /row</label>
+                    </option>
+                    <option name="7" value="7">
+                        <label translate="true">7 item(s) /row</label>
+                    </option>
+                    <option name="8" value="8">
+                        <label translate="true">8 item(s) /row</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="notebook" xsi:type="select"  visible="true" sort_order="90">
+                <label translate="true"><![CDATA[max-width 991: ]]></label>
+                <options>
+                    <option name="1" value="1">
+                        <label translate="true">1 item(s) /row</label>
+                    </option>
+                    <option name="2" value="2">
+                        <label translate="true">2 item(s) /row</label>
+                    </option>
+                     <option name="3" value="3" selected="true">
+                        <label translate="true">3 item(s) /row</label>
+                    </option>
+                    <option name="4" value="4">
+                        <label translate="true">4 item(s) /row</label>
+                    </option>
+                    <option name="5" value="5">
+                        <label translate="true">5 item(s) /row</label>
+                    </option>
+                    <option name="6" value="6">
+                        <label translate="true">6 item(s) /row</label>
+                    </option>
+                    <option name="7" value="7">
+                        <label translate="true">7 item(s) /row</label>
+                    </option>
+                    <option name="8" value="8">
+                        <label translate="true">8 item(s) /row</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="laptop" xsi:type="select"  visible="true" sort_order="95">
+                <label translate="true"><![CDATA[max-width 1199: ]]></label>
+                <options>
+                    <option name="1" value="1">
+                        <label translate="true">1 item(s) /row</label>
+                    </option>
+                    <option name="2" value="2">
+                        <label translate="true">2 item(s) /row</label>
+                    </option>
+                     <option name="3" value="3">
+                        <label translate="true">3 item(s) /row</label>
+                    </option>
+                    <option name="4" value="4" selected="true">
+                        <label translate="true">4 item(s) /row</label>
+                    </option>
+                    <option name="5" value="5">
+                        <label translate="true">5 item(s) /row</label>
+                    </option>
+                    <option name="6" value="6">
+                        <label translate="true">6 item(s) /row</label>
+                    </option>
+                    <option name="7" value="7">
+                        <label translate="true">7 item(s) /row</label>
+                    </option>
+                    <option name="8" value="8">
+                        <label translate="true">8 item(s) /row</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="desktop" xsi:type="select"  visible="true" sort_order="100">
+                <label translate="true"><![CDATA[max-width 1479: ]]></label>
+                <options>
+                    <option name="1" value="1">
+                        <label translate="true">1 item(s) /row</label>
+                    </option>
+                    <option name="2" value="2">
+                        <label translate="true">2 item(s) /row</label>
+                    </option>
+                     <option name="3" value="3">
+                        <label translate="true">3 item(s) /row</label>
+                    </option>
+                    <option name="4" value="4" selected="true">
+                        <label translate="true">4 item(s) /row</label>
+                    </option>
+                    <option name="5" value="5">
+                        <label translate="true">5 item(s) /row</label>
+                    </option>
+                    <option name="6" value="6">
+                        <label translate="true">6 item(s) /row</label>
+                    </option>
+                    <option name="7" value="7">
+                        <label translate="true">7 item(s) /row</label>
+                    </option>
+                    <option name="8" value="8">
+                        <label translate="true">8 item(s) /row</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="widescreen" xsi:type="select"  visible="true" sort_order="105">
+                <label translate="true"><![CDATA[max-width 1919: ]]></label>
+                <options>
+                    <option name="1" value="1">
+                        <label translate="true">1 item(s) /row</label>
+                    </option>
+                    <option name="2" value="2">
+                        <label translate="true">2 item(s) /row</label>
+                    </option>
+                     <option name="3" value="3">
+                        <label translate="true">3 item(s) /row</label>
+                    </option>
+                    <option name="4" value="4" selected="true">
+                        <label translate="true">4 item(s) /row</label>
+                    </option>
+                    <option name="5" value="5">
+                        <label translate="true">5 item(s) /row</label>
+                    </option>
+                    <option name="6" value="6">
+                        <label translate="true">6 item(s) /row</label>
+                    </option>
+                    <option name="7" value="7">
+                        <label translate="true">7 item(s) /row</label>
+                    </option>
+                    <option name="8" value="8">
+                        <label translate="true">8 item(s) /row</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="visible" xsi:type="select"  visible="true" sort_order="110">
+                <label translate="true"><![CDATA[min-width 1920: ]]></label>
+                <options>
+                    <option name="1" value="1">
+                        <label translate="true">1 item(s) /row</label>
+                    </option>
+                    <option name="2" value="2">
+                        <label translate="true">2 item(s) /row</label>
+                    </option>
+                     <option name="3" value="3">
+                        <label translate="true">3 item(s) /row</label>
+                    </option>
+                    <option name="4" value="4">
+                        <label translate="true">4 item(s) /row</label>
+                    </option>
+                    <option name="5" value="5" selected="true">
+                        <label translate="true">5 item(s) /row</label>
+                    </option>
+                    <option name="6" value="6">
+                        <label translate="true">6 item(s) /row</label>
+                    </option>
+                    <option name="7" value="7">
+                        <label translate="true">7 item(s) /row</label>
+                    </option>
+                    <option name="8" value="8">
+                        <label translate="true">8 item(s) /row</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
