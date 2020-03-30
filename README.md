@@ -39,19 +39,39 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
 
 * [Magento 2 Recent Sales Notification](https://magepow.com/magento-2-recent-sales-notification.html)
 
-* [Magento Categories Extension](https://magepow.com/magento-categories-extension.html)
+* [Magento 2 Categories Extension](https://magepow.com/magento-categories-extension.html)
 
-* [Magento Sticky Cart](https://magepow.com/magento-sticky-cart.html)
+* [Magento 2 Sticky Cart](https://magepow.com/magento-sticky-cart.html)
 
 **Premium list extensions**
 
-* [Magento Speed Optimizer](https://magepow.com/magento-speed-optimizer.html)
+* [Magento 2 Pages Speed Optimizer](https://magepow.com/magento-speed-optimizer.html)
 
 * [Magento 2 Mutil Translate](https://magepow.com/magento-multi-translate.html)
 
 * [Magento 2 Instagram Integration](https://magepow.com/magento-2-instagram.html)
 
-* [Lookbook Pin Products](https://magepow.com/lookbook-pin-products.html)
+* [Magento 2 Lookbook Pin Products](https://magepow.com/lookbook-pin-products.html)
+
+**Premium list themes**
+
+* [Expert multipurpose responsive magento 2](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/expert-premium-responsive-magento-2-and-1-support-rtl-magento-2-/21667789)
+
+* [Gecko responsive magento 2](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/gecko-responsive-magento-2-theme-rtl-supported/24677410)
+
+* [Milano fashion responsive magento 2](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/milano-fashion-responsive-magento-1-2-theme/12141971)
+
+* [Electro responsive magento 2](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/electro-responsive-magento-1-2-theme/17042067)
+
+* [Pizzaro food responsive magento 2](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/pizzaro-food-responsive-magento-1-2-theme/19438157)
+
+* [Pizzaro food responsive magento 2](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/pizzaro-food-responsive-magento-1-2-theme/19438157)
+
+* [Biolife organic responsive magento 2](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/biolife-organic-food-magento-2-theme-rtl-supported/25712510)
+
+* [Market responsive magento 2](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/market-responsive-magento-2-theme/22997928)
+
+* [Kuteshop responsive magento 2](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/kuteshop-multipurpose-responsive-magento-1-2-theme/12985435)
 
 **Featured Magento services**
 
