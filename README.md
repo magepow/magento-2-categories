@@ -65,8 +65,6 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
 
 * [Pizzaro food responsive magento 2](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/pizzaro-food-responsive-magento-1-2-theme/19438157)
 
-* [Pizzaro food responsive magento 2](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/pizzaro-food-responsive-magento-1-2-theme/19438157)
-
 * [Biolife organic responsive magento 2](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/biolife-organic-food-magento-2-theme-rtl-supported/25712510)
 
 * [Market responsive magento 2](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/market-responsive-magento-2-theme/22997928)
