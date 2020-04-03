@@ -1,5 +1,8 @@
 # Magento 2 Categories Extension
-**Magento 2 Categories extension** (Magepow Categories Extension) for Magento allows you to have subcategories in the form of a grid or list on category pages, home page or optionally any other page via XML layout updates or CMS markup tags. Additionally, there are more than several options for customization. The subcategories block is Responsive Web Design (RWD) ready. It will recalculate itself based on the parent.
+**Magento 2 Categories extension** for Magento allows you to take the shortest way to lead customers to their target pages. With this extension, you can show sub-categories on category pages and choose the layout to display them as the grid or list. Aside from that, you also can show the hot categories or simply the chosen categories on the Homepage or any CMS page. Advanced Categories Magento extension very easy to configure and manage, with no coding needed and responsive ready. With this extension, you can suggest customers more content/products you have on your store and make an eye-catching look.
+
+For example, your online store is selling a wide range of sub-categories such as Tops, bottoms, pants, bags, jackets,... might dozens of categories but you want when your customers come to your store, you want them to buy or know most of some products types that you concentrate more than normal products. So the advance categories can help you show on the top of the page the hot categories are chosen from categories collection or show them on the top of the category pages to recommend to customers.
+
 ## 1. How to install Magento 2 Categories
 ### ✓ Install Magepow Categories via composer (recommend)
 Run the following command in Magento 2 root folder:
@@ -63,9 +66,9 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
 
 * [Electro responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/electro-responsive-magento-1-2-theme/17042067)
 
-* [Pizzaro food responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/pizzaro-food-responsive-magento-1-2-theme/19438157)
+* [Pizzaro Food responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/pizzaro-food-responsive-magento-1-2-theme/19438157)
 
-* [Biolife organic responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/biolife-organic-food-magento-2-theme-rtl-supported/25712510)
+* [Biolife Organic responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/biolife-organic-food-magento-2-theme-rtl-supported/25712510)
 
 * [Market responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/market-responsive-magento-2-theme/22997928)
 
