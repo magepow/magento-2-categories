@@ -6,6 +6,14 @@
       "OSL-3.0",
       "AFL-3.0"
   ],
+  "authors": [
+    {
+      "name": "Magepow",
+      "email": "support@magepow.com",
+      "homepage": "http://magepow.com",
+      "role": "Technical Support"
+    }
+  ],
   "autoload": {
       "files": [
           "registration.php"
