@@ -50,4 +50,33 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
         return $categories;
     }
 
+    public function getResponsiveBreakpoints()
+    {
+        return array(1921=>'visible', 1920=>'widescreen', 1479=>'desktop', 1200=>'laptop', 992=>'notebook', 768=>'tablet', 576=>'landscape', 480=>'portrait', 361=>'mobile', 1=>'mobile');
+    }
+
+    public function getSlideOptions()
+    {
+        return array('autoplay', 'arrows', 'autoplay-Speed', 'dots', 'infinite', 'padding', 'vertical', 'vertical-Swiping', 'responsive', 'rows', 'slides-To-Show');
+    }
+
+    public function getFrontendCfg()
+    { 
+        if($this->getSlide()) return $this->getSlideOptions();
+
+        $this->addData(array('responsive' =>json_encode($this->getGridOptions())));
+        return array('padding', 'responsive');
+
+    }
+
+    public function getGridOptions()
+    {
+        $options = array();
+        $breakpoints = $this->getResponsiveBreakpoints(); ksort($breakpoints);
+        foreach ($breakpoints as $size => $screen) {
+            $options[]= array($size-1 => $this->getData($screen));
+        }
+        return $options;
+    }
+    
 }
