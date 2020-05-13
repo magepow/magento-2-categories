@@ -13,7 +13,28 @@ namespace Magepow\Categories\Block\Widget;
 
 class Categories extends \Magepow\Categories\Block\Categories implements \Magento\Widget\Block\BlockInterface
 {
-
+    protected function _construct()
+    {
+        $breakpoints = $this->getResponsiveBreakpoints();
+        $total = count($breakpoints);
+        $responsive = '[';
+        foreach ($breakpoints as $size => $screen) {
+            if ($this->getData($screen)){
+                $responsive .= '{"breakpoint": '.$size.', "settings": {"slidesToShow": '.$this->getData($screen).'}}';
+            }
+            if($total-- > 1) $responsive .= ', ';
+        }
+        $responsive .= ']';
+        $data['responsive'] = $responsive;
+        $data['slides-To-Show'] = $this->getData('visible');
+        // $data['swipe-To-Slide'] = 'true';
+        $data['vertical-Swiping'] = $this->getData('vertical');
+        $data['slide'] = 1;
+        //$data['lazy-Load'] = 'progressive';
+        $this->addData($data);
+        parent::_construct();
+    }
+    
     public function getLayout() 
     {
         return 'grid';
