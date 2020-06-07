@@ -10,7 +10,7 @@
             <resource>Magepow_Categories::config_system</resource>
             <group id="general" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>
-                <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Enabled</label>
                     <comment>Enables or disables extension.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
@@ -19,12 +19,12 @@
 
             <group id="category_page" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Category Pages</label>
-                <field id="layout" translate="label comment" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="layout" translate="label comment" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Categories Layout</label>
                     <comment>The way categories are presented. Can be either "Grid" or "List".</comment>
                     <source_model>Magepow\Categories\Model\Config\Layout</source_model>
                 </field>
-                <field id="sort_attribute" translate="label comment" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="sort_attribute" translate="label comment" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Sort Attribute</label>
                     <comment>The way categories are sorted.</comment>
                     <source_model>Magepow\Categories\Model\Config\SortAttribute</source_model>
@@ -34,12 +34,12 @@
                     <comment>Categories heading text.</comment>
                     <backend_model>Magepow\Categories\Model\Config\Heading</backend_model>
                 </field>
-                <field id="description" translate="label comment" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="description" translate="label comment" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Show Description</label>
                     <comment>Enables or disables description.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="exclude_category" translate="label comment" type="multiselect" sortOrder="12"  showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="exclude_category" translate="label comment" type="multiselect" sortOrder="12"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Exclude Categories</label>
                     <comment>Select categories that do not display subcategories.</comment>
                     <source_model>Magepow\Categories\Model\Config\Category</source_model>
@@ -49,12 +49,12 @@
             
             <group id="home_page" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Home Page</label>
-                <field id="layout" translate="label comment" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="layout" translate="label comment" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Categories Layout</label>
                     <comment>The way categories are presented. Can be either "Grid" or "List".</comment>
                     <source_model>Magepow\Categories\Model\Config\Layout</source_model>
                 </field>
-                <field id="sort_attribute" translate="label comment" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="sort_attribute" translate="label comment" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Sort Attribute</label>
                     <comment>The way categories are sorted.</comment>
                     <source_model>Magepow\Categories\Model\Config\SortAttribute</source_model>
@@ -64,12 +64,12 @@
                     <comment>Categories heading text.</comment>
                     <backend_model>Magepow\Categories\Model\Config\Heading</backend_model>
                 </field>
-                <field id="description" translate="label comment" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="description" translate="label comment" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Show Description</label>
                     <comment>Enables or disables description.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="category_select" translate="label comment" type="multiselect" sortOrder="10"  showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="category_select" translate="label comment" type="multiselect" sortOrder="10"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Show Categories</label>
                     <comment>Select the categories displayed on the home page.</comment>
                     <source_model>Magepow\Categories\Model\Config\Category</source_model>
