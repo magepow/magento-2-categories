@@ -41,7 +41,7 @@
                 </field>
                 <field id="exclude_category" translate="label comment" type="multiselect" sortOrder="12"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Exclude Categories</label>
-                    <comment>Select categories that do not display subcategories.</comment>
+                    <comment>Use Ctrl+Click for check several values or uncheck value. Select categories that do not display subcategories.</comment>
                     <source_model>Magepow\Categories\Model\Config\Category</source_model>
                     <can_be_empty>1</can_be_empty>
                 </field>
@@ -71,7 +71,7 @@
                 </field>
                 <field id="category_select" translate="label comment" type="multiselect" sortOrder="10"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Show Categories</label>
-                    <comment>Select the categories displayed on the home page.</comment>
+                    <comment>Use Ctrl+Click for check several values or uncheck value. Select the categories displayed on the home page.</comment>
                     <source_model>Magepow\Categories\Model\Config\Category</source_model>
                     <can_be_empty>1</can_be_empty>
                     <!-- <validate>validate-select</validate> -->
