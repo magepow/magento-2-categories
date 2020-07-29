@@ -7,11 +7,12 @@ For example, your online store is selling a wide range of sub-categories such as
 ### ✓ Install Magepow Categories via composer (recommend)
 Run the following command in Magento 2 root folder:
 
-`composer require magepow/categories`
+```
+composer require magepow/categories
+php bin/magento setup:upgrade
+php bin/magento setup:static-content:deploy -f
+```
 
-`php bin/magento setup:upgrade`
-
-`php bin/magento setup:static-content:deploy -f`
 ## 2. Magepow Categories user guide
 **Magepow Categories** Allow customer access the categories quickly and conveniently, stimulating users to click on the categories because of the beautiful interface.
 ### General Configuration
@@ -37,6 +38,13 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
  
  #### In categories page
  ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/frontend_category.png)
+
+## Donation
+
+If this project help you reduce time to develop, you can give me a cup of coffee :) 
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/paypalme/alopay)
+
 
 **Free Extensions List**
 
