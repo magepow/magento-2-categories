@@ -18,7 +18,6 @@ php bin/magento setup:static-content:deploy -f
 ### General Configuration
 #### Enable Magepow Categories
 Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
-![enable-module-img](https://github.com/magepow/stickycart/blob/master/media/enable.png)
 
 Select `Yes` to enable module.
 #### Setting Magepow Categories
