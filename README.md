@@ -1,9 +1,19 @@
-# Magento 2 Categories Extension
-**Magento 2 Categories extension** for Magento allows you to take the shortest way to lead customers to their target pages. With this extension, you can show sub-categories on category pages and choose the layout to display them as the grid or list. Aside from that, you also can show the hot categories or simply the chosen categories on the Homepage or any CMS page. Advanced Categories Magento extension very easy to configure and manage, with no coding needed and responsive ready. With this extension, you can suggest customers more content/products you have on your store and make an eye-catching look.
+# The best Magento 2 Categories Free
+**Magento 2 Categories extension Free** allows you to take the shortest way to lead customers to their target pages. With this extension, you can show subcategories on category pages and choose the layout to display them as the grid or list. Aside from that, you also can show the hot categories or simply the chosen categories on the Homepage or any CMS page. 
+SubCategories extension Free by Magepow is very easy to configure and manage, with no coding needed and responsive ready. With this extension, you can suggest to customers more content/products you have on your store and make an eye-catching look.
+For example, your online store is selling a wide range of subcategories such as Tops, bottoms, pants, bags, jackets,... might dozens of categories but you want when your customers come to your store, you want them to buy or know most of some products types that you concentrate more than normal products. So the  subcategories extension can help you show on the top of the page the hot categories are chosen from categories collection or show them on the top of the category pages to recommend to customers.
 
-For example, your online store is selling a wide range of sub-categories such as Tops, bottoms, pants, bags, jackets,... might dozens of categories but you want when your customers come to your store, you want them to buy or know most of some products types that you concentrate more than normal products. So the advance categories can help you show on the top of the page the hot categories are chosen from categories collection or show them on the top of the category pages to recommend to customers.
-
-## 1. How to install Magento 2 Categories
+## 1: Highlight Features
+- Option to enable/disable the categories extension
+- Possibility to display optional subcategories on the homepage or category page 
+- Subcategory characteristics on homepage and category pages vary with 2 independent installers
+- Choose from 2 subcategory formats: Grid or List
+- The ability to sort subcategories by 'Name', 'Page Title', 'Location' and 'Creation Date'.
+- Ability to hide / show page category title, customize title name easily
+- The ability to display category descriptions
+- Ability to hide subcategories on homepage and category pages depending on customer needs
+- Full responsive design. Compatible with devices: laptop, phone, tablet. It will recalculate itself based on parents.
+## 2. How to install Magento 2 Categories extension Free
 ### ✓ Install Magepow Categories via composer (recommend)
 Run the following command in Magento 2 root folder:
 
@@ -14,13 +24,13 @@ php bin/magento setup:static-content:deploy -f
 ```
 
 ## 2. Magepow Categories user guide
-**Magepow Categories** Allow customer access the categories quickly and conveniently, stimulating users to click on the categories because of the beautiful interface.
-### General Configuration
-#### Enable Magepow Categories
+**Categories extension free for Magento** allows customers access the categories quickly and conveniently, stimulating users to click on the categories because of the beautiful interface.
+
+### Enable Magepow Categories
 Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
 
 Select `Yes` to enable module.
-#### Setting Magepow Categories
+### Setting Magepow Categories
 Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
 ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/backend_config.png)
  * Two layouts available (Grid or List).
@@ -33,9 +43,10 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
  The home page also has the same settings as the category page, except that the home page can choose the display categories instead of excluding the display category.
  * Select the categories displayed on the home page.
 ### This Is Result In Frontend
+#### In homepage
  ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/frontend_home.png)
  
- #### In categories page
+#### In categories page
  ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/frontend_category.png)
 
 ## Donation
