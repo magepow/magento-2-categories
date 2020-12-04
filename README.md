@@ -49,8 +49,7 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
 #### In categories page
  ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/frontend_category.png)
  
-### [How does Magepow_SubCategories work?](https://www.youtube.com/watch?v=k3A7PBh-NbQ&lc=UgzCFSLUqlD6cl__PH54AaABAg)
-
+### [![How does Magepow_SubCategories work?](https://alothemes.com/pub/media/catalog/product/cache/bcedadad3a80ac2e536aaec1fc48d21b/a/d/advanced_magento_2_categories.png)](https://www.youtube.com/watch?v=k3A7PBh-NbQ&lc=UgzCFSLUqlD6cl__PH54AaABAg)
 ## Donation
 
 If this project help you reduce time to develop, you can give me a cup of coffee :) 
