@@ -1,18 +1,29 @@
 # The best Magento 2 SubCategories Free
 **Magento 2 SubCategories extension Free** allows you to take the shortest way to lead customers to their target pages. With this extension, you can show subcategories on category pages and choose the layout to display them as the grid or list. Aside from that, you also can show the hot categories or simply the chosen categories on the Homepage or any CMS page. 
+
 **SubCategories extension Free by Magepow** is very easy to configure and manage, with no coding needed and responsive ready. With this extension, you can suggest to customers more content/products you have on your store and make an eye-catching look.
+
 For example, your online store is selling a wide range of subcategories such as Tops, bottoms, pants, bags, jackets,... might dozens of categories but you want when your customers come to your store, you want them to buy or know most of some products types that you concentrate more than normal products. So the  subcategories extension can help you show on the top of the page the hot categories are chosen from categories collection or show them on the top of the category pages to recommend to customers.
 
 ## 1: Highlight Features
 - Option to enable/disable the categories extension
+
 - Possibility to display optional subcategories on the homepage or category page 
+
 - Subcategory characteristics on homepage and category pages vary with 2 independent installers
+
 - Choose from 2 subcategory formats: Grid or List
+
 - The ability to sort subcategories by 'Name', 'Page Title', 'Location' and 'Creation Date'.
+
 - Ability to hide / show page category title, customize title name easily
+
 - The ability to display category descriptions
+
 - Ability to hide subcategories on homepage and category pages depending on customer needs
+
 - Full responsive design. Compatible with devices: laptop, phone, tablet. It will recalculate itself based on parents.
+
 ## 2. How to install Magento 2 SubCategories extension Free
 ### ✓ Install Magepow SubCategories via composer (recommend)
 Run the following command in Magento 2 root folder:
