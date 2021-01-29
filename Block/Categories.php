@@ -11,8 +11,10 @@
 
 namespace Magepow\Categories\Block;
 
-class Categories extends \Magento\Framework\View\Element\Template
+class Categories extends \Magento\Framework\View\Element\Template implements \Magento\Framework\DataObject\IdentityInterface
 {
+    const DEFAULT_CACHE_TAG = 'MAGEPOW_CATEGORIES';
+
     const XML_PATH = 'category_page'; 
     
     public $helper;
@@ -46,6 +48,28 @@ class Categories extends \Magento\Framework\View\Element\Template
         parent::__construct($context, $data);
     }
 
+    protected function getCacheLifetime()
+    {
+        return parent::getCacheLifetime() ?: 86400;
+    }
+
+    public function getCacheKeyInfo()
+    {
+        $keyInfo     =  parent::getCacheKeyInfo();
+        $categoryId  =  $this->getCurrentCategory() ? $this->getCurrentCategory()->getId() : 0;
+        $keyInfo[]   =  $categoryId;
+        return $keyInfo;
+    }
+
+    /**
+     * @return array
+     */
+    public function getIdentities()
+    {
+        $categoryId  = $this->getCurrentCategory() ? $this->getCurrentCategory()->getId() : 0;
+        return [self::DEFAULT_CACHE_TAG, self::DEFAULT_CACHE_TAG . '_' . $categoryId];
+    }
+
     public function getLayout() 
     {
         return $this->helper->getConfig(self::XML_PATH . '/layout');
@@ -71,10 +95,15 @@ class Categories extends \Magento\Framework\View\Element\Template
         return $this->helper->getConfig(self::XML_PATH . '/exclude_category');
     }
 
+    public function getCurrentCategory()
+    {
+        return $this->coreRegistry->registry('current_category');
+    }
+
     public function getCategories()
     {
 
-        $category = $this->coreRegistry->registry('current_category');
+        $category = $this->getCurrentCategory();
         if(!$category) return;
 
         $categoryId = $category->getId();
