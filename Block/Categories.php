@@ -15,7 +15,9 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
 {
     const DEFAULT_CACHE_TAG = 'MAGEPOW_CATEGORIES';
 
-    const XML_PATH = 'category_page'; 
+    const XML_PATH = 'category_page';
+
+    const MEDIA_PATH = 'catalog/category';
     
     public $helper;
 
@@ -28,15 +30,23 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
     public $categoryFactory;
 
     public $catalogHelperOutput;
+
+    /**
+     * @var \Magento\Framework\Image\AdapterFactory
+     */
+    protected $_imageFactory;
+
+    protected $_filesystem;
     
     public function __construct(
-        \Magento\Store\Model\StoreManagerInterface $storeManager,
+        \Magento\Framework\View\Element\Template\Context $context,
+        \Magento\Framework\Image\AdapterFactory $imageFactory,
         \Magento\Framework\View\Asset\Repository $viewAssetRepo,
         \Magento\Framework\Registry $coreRegistry,
         \Magento\Catalog\Model\CategoryFactory $categoryFactory,
         \Magento\Catalog\Helper\Output $catalogHelperOutput,
+        \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magepow\Categories\Helper\Data $helper,
-        \Magento\Framework\View\Element\Template\Context $context,
         array $data = []
     ) {    
         $this->storeManager        = $storeManager;
@@ -44,7 +54,11 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         $this->coreRegistry        = $coreRegistry;
         $this->categoryFactory     = $categoryFactory;
         $this->catalogHelperOutput = $catalogHelperOutput;
-        $this->helper = $helper;
+        $this->_imageFactory       = $imageFactory;
+        $this->_filesystem         = $context->getFilesystem();
+        $this->_directoryRed       = $this->_filesystem->getDirectoryRead(\Magento\Framework\App\Filesystem\DirectoryList::MEDIA);
+        $this->helper              = $helper;
+
         parent::__construct($context, $data);
     }
 
@@ -134,24 +148,32 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         return trim($categoryDescription);
     }
 
-    public function getImage($category)
+    public function getImage($image)
     {
-        $placeholderImageUrl = $this->viewAssetRepo->getUrl(
-            'Magento_Catalog::images/product/placeholder/small_image.jpg'
-        );
-        $image = $category->getImage();
-        if ($image != null) {
-            $url = $this->getImageUrl($image);
-        } else {
-            $url = $placeholderImageUrl;
-        }  
-        return $url;
+        return $this->getImageUrl($image);
     }
-    
+
+    public function getImageInfo($image)
+    {
+        if(is_object($image)){
+            $img = $image->getImage();
+            if(!$img) return $image;
+        } else {
+            $img = $image;
+        }
+        $_image  = $this->_imageFactory->create();
+        $absPath = $this->_directoryRed->getAbsolutePath() . str_replace('/pub/media/', '',  $img);
+        if(file_exists($absPath) ){
+            $_image->open($absPath);
+            return $_image;
+        }
+        return $image;
+    }
+
     public function getImageUrl($image)
     {
-        $url = false;  
-        if ($image) {
+        if(is_object($image)) $image = $image->getImage();
+        if($image) {
             if (substr($image, 0, 1) === '/') {
                 $url = $this->storeManager->getStore()->getBaseUrl(
                     \Magento\Framework\UrlInterface::URL_TYPE_WEB
@@ -161,7 +183,9 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
                     \Magento\Framework\UrlInterface::URL_TYPE_MEDIA
                 ) . 'catalog/category/' . $image;
             }
-        } 
+        } else {
+            $url = $this->viewAssetRepo->getUrl('Magento_Catalog::images/product/placeholder/small_image.jpg');
+        }
         return $url;
     }
     

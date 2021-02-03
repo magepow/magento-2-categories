@@ -19,22 +19,25 @@
 $categories  = $block->getCategories();
 $heading     = $block->getHeading();
 $description = $block->isShowDescription();
-$selector    = 'magepow_categories-'.uniqid();
+if (empty($categories)) return;
+$selector     = 'alo-content-'.uniqid(); 
 ?>
-<?php if (empty($categories)) return ?>
+<?php $visible = (int) $this->getData('visible'); $visible++ ?>
+<style type="text/css"><?php echo '.' . $selector . ' .item:nth-child(n+' . $visible . '){display: none;} ' . '.' . $selector . ' .item{float:left}'  ?></style>
 <?php if ($heading): ?>
     <h3 class="title"><?php echo $heading ?></h3>
 <?php endif; ?>
-<div class="<?php echo $selector ?>" data-mage-init='{"gridSlider": {}}'>
+<div class="magepow-categories <?php echo $selector ?>" data-mage-init='{"gridSlider": {}}'>
     <ul class="grid-slider"
         <?php foreach ($this->getFrontendCfg() as $opt) :?>
             data-<?php echo $opt ?>='<?php echo $this->getData($opt) ?>'
         <?php endforeach;?>
     >
         <?php foreach ($categories as $cat): ?>
+            <?php $image = $this->getImageInfo($cat); ?>
             <li class="category-item">
                 <a class="category-url" href="<?php echo $cat->getUrl() ?>">
-                    <img src="<?php echo $this->getImage($cat) ?>" alt="<?php echo $cat->getName() ?>"/>
+                    <img src="<?php echo $this->getImage($cat) ?>" width="<?php echo $image->getOriginalWidth() ?>" height="<?php echo $image->getOriginalHeight() ?>" alt="<?php echo $cat->getName() ?>"/>
                 </a>
                 <a href="<?php echo $cat->getUrl() ?>">
                     <span class="category-name"><?php echo $cat->getName() ?></span>
