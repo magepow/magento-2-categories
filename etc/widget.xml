@@ -42,6 +42,17 @@
                     </option>
                 </options>
             </parameter>
+            <parameter name="thumbnail" xsi:type="select"  visible="true" sort_order="7">
+                <label translate="true">Which Image</label>
+                <options>
+                    <option name="0" value="0">
+                        <label translate="true">Use Category Image</label>
+                    </option>
+                    <option name="1" value="1" selected="true">
+                        <label translate="true">Use Thumbnail</label>
+                    </option>
+                </options>
+            </parameter>
             <parameter name="categories" xsi:type="multiselect" visible="true" sort_order="8" source_model="Magepow\Categories\Model\Config\Category">
                 <label translate="true">Categories</label>
             </parameter>

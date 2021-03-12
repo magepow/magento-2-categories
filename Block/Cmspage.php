@@ -30,6 +30,11 @@ class Cmspage extends Categories
         return $this->helper->getConfig(self::XML_PATH . '/description');
     }    
 
+    public function isShowThumbnail() 
+    {
+        return $this->helper->getConfig(self::XML_PATH . '/thumbnail');
+    } 
+
     public function getSortAttribute() 
     {
         return $this->helper->getConfig(self::XML_PATH . '/sort_attribute');

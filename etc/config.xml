@@ -10,6 +10,7 @@
                 <sort_attribute>position</sort_attribute>
                 <heading>Categories</heading>
                 <description>0</description>
+                <thumbnail>1</thumbnail>
                 <exclude_category></exclude_category>
             </category_page>
             <home_page>
@@ -17,6 +18,7 @@
                 <sort_attribute>position</sort_attribute>
                 <heading>Categories</heading>
                 <description>0</description>
+                <thumbnail>1</thumbnail>
                 <category_select></category_select>
             </home_page>
         </magepow_categories>
