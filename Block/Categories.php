@@ -187,16 +187,9 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
     public function getImageUrl($image)
     {
         if(is_object($image)) $image = $image->getImage();
+        $image = substr($image, strpos($image, "media/") + strlen('media/'));
         if($image) {
-            if (substr($image, 0, 1) === '/') {
-                $url = $this->storeManager->getStore()->getBaseUrl(
-                    \Magento\Framework\UrlInterface::URL_TYPE_WEB
-                ) . ltrim($image, '/');
-            } else {
-                $url = $this->storeManager->getStore()->getBaseUrl(
-                    \Magento\Framework\UrlInterface::URL_TYPE_MEDIA
-                ) . 'catalog/category/' . $image;
-            }
+            $url = $this->storeManager->getStore()->getBaseUrl( \Magento\Framework\UrlInterface::URL_TYPE_MEDIA ) . $image;
         } else {
             $url = $this->viewAssetRepo->getUrl('Magento_Catalog::images/product/placeholder/small_image.jpg');
         }
