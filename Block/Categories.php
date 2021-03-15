@@ -161,7 +161,7 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
             $id = $category->getId();
             $category = $this->categoryFactory->create();
             $category->load($id);
-            $image = $category->getData('pow_thumbnail');
+            $image = $category->getData('magepow_thumbnail');
         }
         $image = strstr($image,'/media');
         return $this->getImageUrl($image);

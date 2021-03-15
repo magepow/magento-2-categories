@@ -20,7 +20,7 @@ class Upload extends \Magento\Backend\App\Action
     }
     public function execute() {
         try {
-            $result = $this->imageUploader->saveFileToTmpDir('pow_thumbnail');
+            $result = $this->imageUploader->saveFileToTmpDir('magepow_thumbnail');
             $result['cookie'] = [
                 'name' => $this->_getSession()->getName(),
                 'value' => $this->_getSession()->getSessionId(),
