@@ -31,7 +31,7 @@ $selector     = 'alo-content-'.uniqid();
 <div class="magepow-categories <?php echo $selector ?>" data-mage-init='{"gridSlider": {}}'>
     <ul class="grid-slider"
         <?php foreach ($this->getFrontendCfg() as $opt) :?>
-            data-<?php echo $opt ?>='<?php echo $this->getData($opt) ?>'
+            data-<?php echo $opt ?>='<?php echo $this->getData(str_replace("-","",$opt)) ?>'
         <?php endforeach;?>
     >
         <?php foreach ($categories as $cat): ?>

@@ -165,7 +165,7 @@
                 </depends>
                 <value>300</value>
             </parameter>
-            <parameter name="autoplay-Speed" required="true" xsi:type="text"  visible="true" sort_order="50">
+            <parameter name="autoplaySpeed" required="true" xsi:type="text"  visible="true" sort_order="50">
                 <label translate="true">Autoplay Speed</label>
                 <depends>
                     <parameter name="slide" value="1" />
