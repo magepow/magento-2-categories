@@ -44,6 +44,11 @@
                     <comment>Enables to use Thumbnail set in Categories or disables to use Category Image.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="item_amount" translate="label comment" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Show number of items</label>
+                    <comment>Enables to show number of items in each category.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
                 <field id="exclude_category" translate="label comment" type="multiselect" sortOrder="12"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Exclude Categories</label>
                     <comment>Use Ctrl+Click for check several values or uncheck value. Select categories that do not display subcategories.</comment>
@@ -77,6 +82,11 @@
                 <field id="thumbnail" translate="label comment" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Use Thumbnail</label>
                     <comment>Enables to use Thumbnail set in Categories or disables to use Category Image.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="item_amount" translate="label comment" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Show number of items</label>
+                    <comment>Enables to show number of items in each category.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="category_select" translate="label comment" type="multiselect" sortOrder="10"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">

@@ -20,7 +20,7 @@ $categories       = $block->getCategories();
 $layout           = $block->getLayout();
 $heading          = $block->getHeading();
 $description      = $block->isShowDescription();
-
+$itemAmount       = $block->getItemAmount();
 ?>
 <?php if (empty($categories)) return ?>
 <?php if ($heading): ?>
@@ -29,19 +29,35 @@ $description      = $block->isShowDescription();
 <ul class="magepow-categories-<?php echo $layout ?>">
     <?php foreach ($categories as $cat): ?>
         <li class="magepow-categories-category-wrapper">
-            <a class="magepow-categories-category" href="<?php echo $cat->getUrl() ?>">
-                <div class="magepow-categories-category-image">
-                    <img src="<?php echo $this->getImage($cat) ?>" alt="<?php echo $cat->getName() ?>"/>
+            <div class="magepow-categories-category-info">
+                <div class="category-image-container">
+                    <a class="magepow-categories-category" href="<?php echo $cat->getUrl() ?>">
+                        <div class="magepow-categories-category-image">
+                            <img src="<?php echo $this->getImage($cat) ?>" alt="<?php echo $cat->getName() ?>"/>
+                        </div>
+                        <div class="magepow-categories-category-name">
+                            <span><?php echo $cat->getName() ?></span>
+                        </div>
+                    </a>
                 </div>
-                <div class="magepow-categories-category-name">
-                    <span><?php echo $cat->getName() ?></span>
-                </div>
-            </a>
-            <?php if($description): ?>
-                <div class="magepow-categories-category-description">
-                    <?php echo $this->getDescription($cat) ?>
-                </div>
-            <?php endif; ?>
+                <?php if($description): ?>
+                    <div class="magepow-categories-category-description">
+                        <?php echo $this->getDescription($cat) ?>
+                    </div>
+                <?php endif; ?>
+                <?php if($itemAmount): ?>
+                        <div class="category-item-amount">
+                                <?php echo "(".$cat->getProductCollection()->count();
+                                    if($cat->getProductCollection()->count()>0)echo " items)";
+                                    else echo " item)"; 
+                                ?>
+                        </div>
+                <?php endif; ?>
+                <div class="btn-link">
+                    <a class="magepow-categories-category" href="<?php echo $cat->getUrl() ?>">Show now</a>
+                </div>  
+            </div>
+            
         </li>
     <?php endforeach; ?>
 </ul>

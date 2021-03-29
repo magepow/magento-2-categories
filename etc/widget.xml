@@ -53,6 +53,17 @@
                     </option>
                 </options>
             </parameter>
+            <parameter name="item_amount" xsi:type="select"  visible="true" sort_order="7">
+                <label translate="true">Show Number of items</label>
+                <options>
+                    <option name="0" value="0">
+                        <label translate="true">No</label>
+                    </option>
+                    <option name="1" value="1" selected="true">
+                        <label translate="true">Yes</label>
+                    </option>
+                </options>
+            </parameter>
             <parameter name="categories" xsi:type="multiselect" visible="true" sort_order="8" source_model="Magepow\Categories\Model\Config\Category">
                 <label translate="true">Categories</label>
             </parameter>

@@ -19,6 +19,7 @@
 $categories  = $block->getCategories();
 $heading     = $block->getHeading();
 $description = $block->isShowDescription();
+$itemAmount  = $block->getItemAmount();
 if (empty($categories)) return;
 $selector     = 'alo-content-'.uniqid(); 
 ?>
@@ -36,17 +37,38 @@ $selector     = 'alo-content-'.uniqid();
         <?php foreach ($categories as $cat): ?>
             <?php $image = $this->getImageInfo($cat); ?>
             <li class="category-item">
-                <a class="category-url" href="<?php echo $cat->getUrl() ?>">
-                    <img src="<?php echo $this->getImage($cat) ?>" width="<?php echo $image->getOriginalWidth() ?>" height="<?php echo $image->getOriginalHeight() ?>" alt="<?php echo $cat->getName() ?>"/>
-                </a>
-                <a href="<?php echo $cat->getUrl() ?>">
-                    <span class="category-name"><?php echo $cat->getName() ?></span>
-                </a>
-                <?php if($description): ?>
-                    <div class="category-description">
-                        <?php echo $this->getDescription($cat) ?>
+                <div class="category-item-info">
+                    <div class="category-image-container">
+                        <a class="category-url" href="<?php echo $cat->getUrl() ?>">
+                            <img src="<?php echo $this->getImage($cat) ?>" width="<?php echo $image->getOriginalWidth() ?>" height="<?php echo $image->getOriginalHeight() ?>" alt="<?php echo $cat->getName() ?>"/>
+                        </a>
                     </div>
-                <?php endif; ?>
+                    <div class="category-item-details">
+                        <h3 class="category-item-name">
+                            <a class="category-item-link" href="<?php echo $cat->getUrl() ?>">
+                                <span class="category-name"><?php echo $cat->getName() ?></span>
+                            </a>
+                        </h3>
+                        
+                        <?php if($description): ?>
+                            <div class="category-description">
+                                <?php echo $this->getDescription($cat) ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if($itemAmount): ?>
+                            <div class="category-item-amount">
+                                    <?php echo "(".$cat->getProductCollection()->count();
+                                        if($cat->getProductCollection()->count()>0)echo " items)";
+                                        else echo " item)"; 
+                                    ?>
+                            </div>
+                        <?php endif; ?>
+                        <div class="btn-link">
+                            <a class="magepow-categories-category" href="<?php echo $cat->getUrl() ?>">Show now</a>
+                        </div>
+                        
+                    </div>
+                </div>
             </li>
         <?php endforeach; ?>
     </ul>

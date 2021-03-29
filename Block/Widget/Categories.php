@@ -48,7 +48,11 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
     public function isShowDescription() 
     {
         return $this->getData('description');
-    }    
+    }  
+
+    public function getItemAmount(){
+        return $this->getData('item_amount');
+    }  
 
     public function getSortAttribute() 
     {

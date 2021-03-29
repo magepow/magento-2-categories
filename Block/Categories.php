@@ -104,6 +104,11 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         return $this->helper->getConfig(self::XML_PATH . '/thumbnail');
     } 
 
+    public function getItemAmount() 
+    {
+        return $this->helper->getConfig(self::XML_PATH . '/item_amount');
+    } 
+    
     public function getSortAttribute() 
     {
         return $this->helper->getConfig(self::XML_PATH . '/sort_attribute');
@@ -156,14 +161,13 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
     public function getImage($category)
     {
         if($this->isShowThumbnail()!=1){
-            $image = $this->getImageUrl($category);
+            return $this->getImageUrl($category);
         }else{
             $id = $category->getId();
             $category = $this->categoryFactory->create();
             $category->load($id);
             $image = $category->getData('magepow_thumbnail');
         }
-        $image = strstr($image,'/media');
         return $this->getImageUrl($image);
     }
 
@@ -186,8 +190,15 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
 
     public function getImageUrl($image)
     {
-        if(is_object($image)) $image = $image->getImage();
-        $image = substr($image, strpos($image, "media/") + strlen('media/'));
+        if(is_object($image)){
+            $image = $image->getImage();
+        }
+        if(strpos($image, "media/"))$image = strstr($image,'/media');
+        elseif($image!=NULL){
+            $image = 'catalog/category/'.$image;
+        }
+        $image = str_replace('media/', '',  $image);
+
         if($image) {
             $url = $this->storeManager->getStore()->getBaseUrl( \Magento\Framework\UrlInterface::URL_TYPE_MEDIA ) . $image;
         } else {
