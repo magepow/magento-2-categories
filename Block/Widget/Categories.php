@@ -26,6 +26,7 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
         }
         $responsive .= ']';
         $data['responsive'] = $responsive;
+        $data['autoplay-Speed'] = $this->getData('autoplaySpeed');
         $data['slides-To-Show'] = $this->getData('visible');
         // $data['swipe-To-Slide'] = 'true';
         $data['vertical-Swiping'] = $this->getData('vertical');
