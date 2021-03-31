@@ -15,5 +15,5 @@
             </argument>
         </arguments>
     </virtualType>
-    <preference for="Magento\Catalog\Model\Category\Attribute\Backend\Image" type="Magepow\Categories\Model\Category\Attribute\Backend\Image" />
+    <!-- <preference for="Magento\Catalog\Model\Category\Attribute\Backend\Image" type="Magepow\Categories\Model\Category\Attribute\Backend\Image" /> -->
 </config>
