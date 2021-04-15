@@ -36,7 +36,7 @@ $selector     = 'alo-content-'.uniqid();
     >
         <?php foreach ($categories as $cat): ?>
             <?php $image = $this->getImageInfo($cat); ?>
-            <li class="category-item">
+            <li class="category-item item">
                 <div class="category-item-info">
                     <div class="category-image-container">
                         <a class="category-url" href="<?php echo $cat->getUrl() ?>">
