@@ -36,6 +36,10 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
         parent::_construct();
     }
     
+    public function isShowThumbnail(){
+        return $this->getData('thumbnail');
+    }
+    
     public function getLayout() 
     {
         return 'grid';
