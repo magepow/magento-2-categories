@@ -32,7 +32,7 @@ The displayed pages that are optional subcategories include:
 - The characteristics of the subcategory on each page can be customized with 'Category pro rule' (Category Pro edition).
 #### Nice Categories Layout
 - 2 subcategory formats: Grid or List
-- Slider Configuration: Can be customized Slide Vertical, Vertical Swiping, Infinite, Auto Play, Arrows, Dots, Rows, Speed, autoplay Speed, Padding.
+- Slider Configuration: Can be customized Slide Vertical, Vertical Swiping, Infinite, Auto Play, Arrows, Dots, Rows, Speed, autoplay Speed, Padding (Category Pro edition)
 #### Sort the subcategories by: 
 - Name
 - Page Title
