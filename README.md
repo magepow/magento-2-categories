@@ -11,27 +11,47 @@ So the  subcategories extension can help you show on the top of the page the hot
 [![Total Downloads](https://poser.pugx.org/magepow/categories/downloads)](https://packagist.org/packages/magepow/categories)
 [![Daily Downloads](https://poser.pugx.org/magepow/categories/d/daily)](https://packagist.org/packages/magepow/categories)
 
-### 1: Highlight Features
-- Option to enable/disable the categories extension
+### 1. Highlight Features
+#### Display optional subcategories on the other pages
+Navigate customers from other sites to the featured categories in your online store.
+The displayed pages that are optional subcategories include:
 
-- Possibility to display optional subcategories on the homepage or category page 
+- Home page
+- Category page
+- Product page (Category Pro edition)
+- Shopping Cart page (Category Pro edition)
 
-- Subcategory characteristics on homepage and category pages vary with 2 independent installers
+#### 23 position display Category (Category Pro edition)
 
-- Choose from 2 subcategory formats: Grid or List
+- 2 positions on the Home page: Content Top, Content Bottom.
+- 4 positions in Category page: Content Top, Content Bottom, Sidebar Top, Sidebar Bottom.
+- 12 positions on Product page: Before Native Related Block, After Native Related Block, Add into Native Related Block, Before Native Up-sells Block, After Native Up-sells Block, Add into Native Up-sells Block, Content top, Into Native Tab Block, Before Native Tab Block, Content Bottom, Sidebar Top, Sidebar Bottom.
+- 5 positions in Shopping Cart page: Before Native Cross-sells Block, After Native Cross-sells Block, Add into Native Cross-sells Block, Content Top, Content Bottom.
+#### The characteristics of subcategories on pages are independent
+- The properties of the subcategory on the homepage and category page differ depending on the 2 independent installers.
+- The characteristics of the subcategory on each page can be customized with 'Category pro rule' (Category Pro edition).
+#### Nice Categories Layout
+- 2 subcategory formats: Grid or List
+- Slider Configuration: Can be customized Slide Vertical, Vertical Swiping, Infinite, Auto Play, Arrows, Dots, Rows, Speed, autoplay Speed, Padding.
+#### Sort the subcategories by: 
+- Name
+- Page Title
+- Location
+- Creation Date
+- Admin tree (Category Pro edition)
+#### The ability to display subcategory with:
+- Block Title
+- Description
+- Thumbnail
+- Item Amount
+#### Full responsive design
+- Compatible with devices: laptop, phone, tablet... It will recalculate itself based on parents.
+- Customize Responsive Information with the pro version
+#### Display different categories with different customers (Category Pro edition)
+- You can display the desired category with different customer groups: Not logged in, General, Wholesale, Retailer.
 
-- The ability to sort subcategories by 'Name', 'Page Title', 'Location' and 'Creation Date'.
-
-- Ability to hide / show page category title, customize title name easily
-
-- The ability to display category descriptions
-
-- Ability to hide subcategories on homepage and category pages depending on customer needs
-
-- Full responsive design. Compatible with devices: laptop, phone, tablet. It will recalculate itself based on parents.
-
-## 2. How to install Magento 2 SubCategories extension Free
-### ✓ Install Magepow SubCategories via composer (recommend)
+### 2. How to install Magento 2 SubCategories extension Free
+#### ✓ Install Magepow SubCategories via composer (recommend)
 Run the following command in Magento 2 root folder:
 
 ```
@@ -40,14 +60,14 @@ php bin/magento setup:upgrade
 php bin/magento setup:static-content:deploy -f
 ```
 
-## 2. Magepow SubCategories user guide
+### 3. Magepow SubCategories user guide
 **SubCategories extension free for Magento** allows customers access the categories quickly and conveniently, stimulating users to click on the categories because of the beautiful interface.
 
-### Enable Magepow Categories
+#### Enable Magepow Categories
 Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
 
 Select `Yes` to enable module.
-### Setting Magepow SubCategories
+#### Setting Magepow SubCategories
 Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
 ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/backend_config.png)
  * Two layouts available (Grid or List).
