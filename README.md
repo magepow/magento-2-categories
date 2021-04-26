@@ -69,22 +69,26 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
 Select `Yes` to enable module.
 #### Setting Magepow SubCategories
 Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
+
 ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/backend_config.png)
  * Two layouts available (Grid or List).
  * Ability to sort subcategories by "Name", "Page Title", "Position", and "Created Date".
  * Ability to show subcategories heading or not and to type in the heading text.
  * Ability to show or not category description.
  * Select categories that do not display subcategories.
- ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/backend_config.png)
+ 
+![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/backend_config.png)
  
  The home page also has the same settings as the category page, except that the home page can choose the display categories instead of excluding the display category.
  * Select the categories displayed on the home page.
 ### This Is Result In Frontend
 #### In homepage
- ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/frontend_home.png)
+
+![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/frontend_home.png)
  
 #### In categories page
- ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/frontend_category.png)
+
+![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/frontend_category.png)
  
 ### [How does Magepow_SubCategories work?](https://www.youtube.com/watch?v=k3A7PBh-NbQ&lc=UgzCFSLUqlD6cl__PH54AaABAg)
 ## Donation
