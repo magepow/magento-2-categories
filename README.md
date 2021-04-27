@@ -21,7 +21,7 @@ Category page  |  Category page
 X  | Product page :triangular_flag_on_post:
 X  | Shopping Cart page :triangular_flag_on_post:
 
-#### Positions display Category (Category Pro edition) 
+#### Positions display Category 
 
 Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
 ------------- | -------------
