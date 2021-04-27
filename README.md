@@ -25,11 +25,11 @@ X  | Shopping Cart page :triangular_flag_on_post:
 
 Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
 ------------- | -------------
-2 positions | 23 positions
+2 positions | 20 positions
 Home page (1): Content top |Home page (2): Content Top, Content Bottom :triangular_flag_on_post:
 Category page (1): Content top |Category page (4): Content Top, Content Bottom, Sidebar Top, Sidebar Bottom :triangular_flag_on_post:
-0 |Product page (12): Before Native Related Block, After Native Related Block, Add into Native Related Block, Before Native Up-sells Block, After Native Up-sells Block, Add into Native Up-sells Block, Content top, Into Native Tab Block, Before Native Tab Block, Content Bottom, Sidebar Top, Sidebar Bottom :triangular_flag_on_post:
-0 |5 positions in Shopping Cart page: Before Native Cross-sells Block, After Native Cross-sells Block, Add into Native Cross-sells Block, Content Top, Content Bottom :triangular_flag_on_post:
+0 |Product page (12): Before Native Related Block, After Native Related Block, Before Native Up-sells Block, After Native Up-sells Block, Content top, Into Native Tab Block, Before Native Tab Block, Content Bottom, Sidebar Top, Sidebar Bottom :triangular_flag_on_post:
+0 |5 positions in Shopping Cart page: Before Native Cross-sells Block, After Native Cross-sells Block, Content Top, Content Bottom :triangular_flag_on_post:
 
 #### The characteristics of subcategories on pages are independent
 Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
@@ -40,6 +40,7 @@ The properties of the subcategory on the homepage and category page differ depen
 Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
 ------------- | -------------
 2 subcategory formats: Grid or List | Slider Configuration: Can be customized Slide Vertical, Vertical Swiping, Infinite, Auto Play, Arrows, Dots, Rows, Speed, autoplay Speed, Padding (Category Pro edition) :triangular_flag_on_post:
+
 #### Sort the subcategories by: 
 Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
 ------------- | -------------
@@ -102,7 +103,7 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
 
 ![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/frontend_category.png)
  
-### [How does Magepow_SubCategories work?](https://www.youtube.com/watch?v=k3A7PBh-NbQ&lc=UgzCFSLUqlD6cl__PH54AaABAg)
+### [How does Magento 2 Categories work?](https://www.youtube.com/watch?v=k3A7PBh-NbQ&lc=UgzCFSLUqlD6cl__PH54AaABAg)
 ## Donation
 
 If this project help you reduce time to develop, you can give me a cup of coffee :) 
