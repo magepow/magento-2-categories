@@ -14,25 +14,28 @@ So this extension can help you show on the top of the page the hot categories ar
 ### 1. Highlight Features
 #### Display optional subcategories on the other pages
 Navigate customers from other sites to the featured categories in your online store.
-The displayed pages that are optional subcategories include:
+Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro 
+------------- | -------------
+Home page | Home page
+Category page  |  Category page
+X  | Product page :triangular_flag_on_post:
+X  | Shopping Cart page :triangular_flag_on_post:
 
-- Home page
-- Category page
-- Product page (Category Pro edition)
-- Shopping Cart page (Category Pro edition)
-
-#### 23 position display Category (Category Pro edition)
+#### 23 position display Category (Category Pro edition) 
 
 - 2 positions on the Home page: Content Top, Content Bottom.
 - 4 positions in Category page: Content Top, Content Bottom, Sidebar Top, Sidebar Bottom.
 - 12 positions on Product page: Before Native Related Block, After Native Related Block, Add into Native Related Block, Before Native Up-sells Block, After Native Up-sells Block, Add into Native Up-sells Block, Content top, Into Native Tab Block, Before Native Tab Block, Content Bottom, Sidebar Top, Sidebar Bottom.
 - 5 positions in Shopping Cart page: Before Native Cross-sells Block, After Native Cross-sells Block, Add into Native Cross-sells Block, Content Top, Content Bottom.
 #### The characteristics of subcategories on pages are independent
-- The properties of the subcategory on the homepage and category page differ depending on the 2 independent installers.
-- The characteristics of the subcategory on each page can be customized with 'Category pro rule' (Category Pro edition).
+Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
+------------- | -------------
+The properties of the subcategory on the homepage and category page differ depending on the 2 independent installers | The characteristics of the subcategory on each page can be customized with 'Category pro rule' :triangular_flag_on_post:
+
 #### Nice Categories Layout
-- 2 subcategory formats: Grid or List
-- Slider Configuration: Can be customized Slide Vertical, Vertical Swiping, Infinite, Auto Play, Arrows, Dots, Rows, Speed, autoplay Speed, Padding (Category Pro edition)
+Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
+------------- | -------------
+2 subcategory formats: Grid or List | Slider Configuration: Can be customized Slide Vertical, Vertical Swiping, Infinite, Auto Play, Arrows, Dots, Rows, Speed, autoplay Speed, Padding (Category Pro edition) :triangular_flag_on_post:
 #### Sort the subcategories by: 
 - Name
 - Page Title
