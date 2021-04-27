@@ -1,11 +1,11 @@
-## Magento 2 SubCategories Extension Free
-**Magento 2 SubCategories extension Free** allows you to take the shortest way to lead customers to their target pages. With this extension, you can show subcategories on category pages and choose the layout to display them as the grid or list. Aside from that, you also can show the hot categories or simply the chosen categories on the Homepage or any CMS page. 
+## Magento 2 Categories Extension Free
+**Magento 2 Categories Extension Free** allows you to take the shortest way to lead customers to their target pages. With this extension, you can show subcategories on category pages and choose the layout to display them as the grid or list. Aside from that, you also can show the hot categories or simply the chosen categories on the Homepage or any CMS page. 
 
-**SubCategories extension Free by Magepow** is very easy to configure and manage, with no coding needed and responsive ready. With this extension, you can suggest to customers more content/products you have on your store and make an eye-catching look.
+**Categories extension free by Magepow** is very easy to configure and manage, with no coding needed and responsive ready. With this extension, you can suggest to customers more content/products you have on your store and make an eye-catching look.
 
-For example, your online store is selling a wide range of subcategories such as Tops, bottoms, pants, bags, jackets,... might dozens of categories but you want when your customers come to your store, you want them to buy or know most of some products types that you concentrate more than normal products. 
+For example, your online store is selling a wide range of subcategories such as Tops, bottoms, pants, bags, jackets... might dozens of categories but you want when your customers come to your store, you want them to buy or know most of some products types that you concentrate more than normal products. 
 
-So the  subcategories extension can help you show on the top of the page the hot categories are chosen from categories collection or show them on the top of the category pages to recommend to customers.
+So this extension can help you show on the top of the page the hot categories are chosen from categories collection or show them on the top of the category pages to recommend to customers.
 
 [![Latest Stable Version](https://poser.pugx.org/magepow/categories/v/stable)](https://packagist.org/packages/magepow/categories)
 [![Total Downloads](https://poser.pugx.org/magepow/categories/downloads)](https://packagist.org/packages/magepow/categories)
