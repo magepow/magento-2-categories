@@ -21,12 +21,16 @@ Category page  |  Category page
 X  | Product page :triangular_flag_on_post:
 X  | Shopping Cart page :triangular_flag_on_post:
 
-#### 23 position display Category (Category Pro edition) 
+#### Positions display Category (Category Pro edition) 
 
-- 2 positions on the Home page: Content Top, Content Bottom.
-- 4 positions in Category page: Content Top, Content Bottom, Sidebar Top, Sidebar Bottom.
-- 12 positions on Product page: Before Native Related Block, After Native Related Block, Add into Native Related Block, Before Native Up-sells Block, After Native Up-sells Block, Add into Native Up-sells Block, Content top, Into Native Tab Block, Before Native Tab Block, Content Bottom, Sidebar Top, Sidebar Bottom.
-- 5 positions in Shopping Cart page: Before Native Cross-sells Block, After Native Cross-sells Block, Add into Native Cross-sells Block, Content Top, Content Bottom.
+Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
+------------- | -------------
+2 positions | 23 positions
+Home page (1): Content top |Home page (2): Content Top, Content Bottom :triangular_flag_on_post:
+Category page (1): Content top |Category page (4): Content Top, Content Bottom, Sidebar Top, Sidebar Bottom :triangular_flag_on_post:
+0 |Product page (12): Before Native Related Block, After Native Related Block, Add into Native Related Block, Before Native Up-sells Block, After Native Up-sells Block, Add into Native Up-sells Block, Content top, Into Native Tab Block, Before Native Tab Block, Content Bottom, Sidebar Top, Sidebar Bottom :triangular_flag_on_post:
+0 |5 positions in Shopping Cart page: Before Native Cross-sells Block, After Native Cross-sells Block, Add into Native Cross-sells Block, Content Top, Content Bottom :triangular_flag_on_post:
+
 #### The characteristics of subcategories on pages are independent
 Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
 ------------- | -------------
@@ -37,21 +41,26 @@ Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
 ------------- | -------------
 2 subcategory formats: Grid or List | Slider Configuration: Can be customized Slide Vertical, Vertical Swiping, Infinite, Auto Play, Arrows, Dots, Rows, Speed, autoplay Speed, Padding (Category Pro edition) :triangular_flag_on_post:
 #### Sort the subcategories by: 
-- Name
-- Page Title
-- Location
-- Creation Date
-- Admin tree (Category Pro edition)
+Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
+------------- | -------------
+Name | Name
+Page Title | Page Title
+Location | Location
+Creation Date | Creation Date
+X | Admin tree :triangular_flag_on_post:
 #### The ability to display subcategory with:
 - Block Title
 - Description
 - Thumbnail
 - Item Amount
 #### Full responsive design
-- Compatible with devices: laptop, phone, tablet... It will recalculate itself based on parents.
-- Customize Responsive Information with the pro version
+Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
+------------- | -------------
+Compatible with devices: laptop, phone, tablet... It will recalculate itself based on parents | Customize Responsive Information :triangular_flag_on_post:
 #### Display different categories with different customers (Category Pro edition)
-- You can display the desired category with different customer groups: Not logged in, General, Wholesale, Retailer.
+Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
+------------- | -------------
+X | You can display the desired category with different customer groups: Not logged in, General, Wholesale, Retailer.
 
 ### 2. How to install Magento 2 SubCategories extension Free
 #### ✓ Install Magepow SubCategories via composer (recommend)
