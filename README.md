@@ -25,11 +25,11 @@ X  | Shopping Cart page :triangular_flag_on_post:
 
 Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
 ------------- | -------------
-2 positions | 20 positions
+2 positions | 18 positions
 Home page (1): Content top |Home page (2): Content Top, Content Bottom :triangular_flag_on_post:
 Category page (1): Content top |Category page (4): Content Top, Content Bottom, Sidebar Top, Sidebar Bottom :triangular_flag_on_post:
-0 |Product page (12): Before Native Related Block, After Native Related Block, Before Native Up-sells Block, After Native Up-sells Block, Content top, Into Native Tab Block, Before Native Tab Block, Content Bottom, Sidebar Top, Sidebar Bottom :triangular_flag_on_post:
-0 |5 positions in Shopping Cart page: Before Native Cross-sells Block, After Native Cross-sells Block, Content Top, Content Bottom :triangular_flag_on_post:
+0 |Product page (10): Before Native Related Block, After Native Related Block, Before Native Up-sells Block, After Native Up-sells Block, Content top, Into Native Tab Block, Before Native Tab Block, Content Bottom, Sidebar Top, Sidebar Bottom :triangular_flag_on_post:
+0 |Shopping Cart page (2): Content Top, Content Bottom :triangular_flag_on_post:
 
 #### The characteristics of subcategories on pages are independent
 Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
