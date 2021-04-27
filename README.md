@@ -63,6 +63,8 @@ Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
 ------------- | -------------
 X | You can display the desired category with different customer groups: Not logged in, General, Wholesale, Retailer.
 
+![Magento 2 Categories Free](https://github.com/magepow/magento-2-categories/blob/master/media/Mgento-2-category-1.jpg) [![Magento 2 Categories Pro](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-3.jpg)](https://magepow.com/magento-2-categories-extension.html)
+
 ### 2. How to install Magento 2 SubCategories extension Free
 #### ✓ Install Magepow SubCategories via composer (recommend)
 Run the following command in Magento 2 root folder:
