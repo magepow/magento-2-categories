@@ -23,7 +23,7 @@ So this extension can help you show on the top of the page the hot categories ar
 |Full responsive design | Compatible with devices: laptop, phone, tablet... It will recalculate itself based on parents|Customize Responsive Information |
 |Display different categories with different customers | X|You can display the desired category with different customer groups: Not logged in, General, Wholesale, Retailer |
 
-![Magento 2 Categories Free](https://github.com/magepow/magento-2-categories/blob/master/media/Mgento-2-category-1.jpg) [![Magento 2 Categories Pro](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-3.jpg)](https://magepow.com/magento-2-categories-extension.html)
+[![Magento 2 Categories Free](https://github.com/magepow/magento-2-categories/blob/master/media/Mgento-2-category.jpg)](https://magepow.com/magento-2-categories-extension.html) [![Magento 2 Categories Pro](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-3.jpg)](https://magepow.com/magento-2-categories-extension.html)
 
 ### 2. How to install Magento 2 SubCategories extension Free
 #### ✓ Install Magepow SubCategories via composer (recommend)
