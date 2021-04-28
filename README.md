@@ -18,6 +18,8 @@ So this extension can help you show on the top of the page the hot categories ar
 |Display optional subcategories on **Category page**|:white_check_mark:|:white_check_mark:|
 |Display optional subcategories on **Product page**|X|:white_check_mark:|
 |Display optional subcategories on **Shopping Cart page**|X|:white_check_mark:|
+|Add or remove categories for the home pape and category pages as desired|:white_check_mark:|:white_check_mark:|
+|Add or remove categories on each page as desired|X|:white_check_mark:|
 |Multiple positions show categories|:white_check_mark:|:white_check_mark:|
 |Subcategory characteristics on homepage and category page vary with 2 <br /> independent installers|:white_check_mark:|:white_check_mark:|
 |Subcategory block characteristics on each page can be individually <br /> customized using 'Category Pro Rule'|X|:white_check_mark:|
