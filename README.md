@@ -88,6 +88,11 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 
 
 **Our Magento 2 Extensions List**
+* [Special Promotion for Magento 2](https://magepow.com/magento-2-special-promotion-extension.html)
+
+* [Magento 2 Size Chart](https://magepow.com/magento-2-size-chart.html)
+
+* [Magento 2 Product Tags](https://magepow.com/magento-2-product-tags.html)
 
 * [Magento 2 Recent Sales Notification](https://magepow.com/magento-2-recent-sales-notification.html)
 
