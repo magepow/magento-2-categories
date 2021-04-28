@@ -12,56 +12,16 @@ So this extension can help you show on the top of the page the hot categories ar
 [![Daily Downloads](https://poser.pugx.org/magepow/categories/d/daily)](https://packagist.org/packages/magepow/categories)
 
 ### 1. Highlight Features
-#### Display optional subcategories on the other pages
-Navigate customers from other sites to the featured categories in your online store.
-Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro 
-------------- | -------------
-Home page | Home page
-Category page  |  Category page
-X  | Product page :triangular_flag_on_post:
-X  | Shopping Cart page :triangular_flag_on_post:
-
-#### Positions display Category 
-
-Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
-------------- | -------------
-2 positions | 18 positions
-Home page (1): Content top |Home page (2): Content Top, Content Bottom :triangular_flag_on_post:
-Category page (1): Content top |Category page (4): Content Top, Content Bottom, Sidebar Top, Sidebar Bottom :triangular_flag_on_post:
-0 |Product page (10): Before Native Related Block, After Native Related Block, Before Native Up-sells Block, After Native Up-sells Block, Content top, Into Native Tab Block, Before Native Tab Block, Content Bottom, Sidebar Top, Sidebar Bottom :triangular_flag_on_post:
-0 |Shopping Cart page (2): Content Top, Content Bottom :triangular_flag_on_post:
-
-#### The characteristics of subcategories on pages are independent
-Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
-------------- | -------------
-The properties of the subcategory on the homepage and category page differ depending on the 2 independent installers | The characteristics of the subcategory on each page can be customized with 'Category pro rule' :triangular_flag_on_post:
-
-#### Nice Categories Layout
-Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
-------------- | -------------
-2 subcategory formats: Grid or List | Slider Configuration: Can be customized Slide Vertical, Vertical Swiping, Infinite, Auto Play, Arrows, Dots, Rows, Speed, autoplay Speed, Padding (Category Pro edition) :triangular_flag_on_post:
-
-#### Sort the subcategories by: 
-Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
-------------- | -------------
-Name | Name
-Page Title | Page Title
-Location | Location
-Creation Date | Creation Date
-X | Admin tree :triangular_flag_on_post:
-#### The ability to display subcategory with:
-- Block Title
-- Description
-- Thumbnail
-- Item Amount
-#### Full responsive design
-Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
-------------- | -------------
-Compatible with devices: laptop, phone, tablet... It will recalculate itself based on parents | Customize Responsive Information :triangular_flag_on_post:
-#### Display different categories with different customers (Category Pro edition)
-Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro
-------------- | -------------
-X | You can display the desired category with different customer groups: Not logged in, General, Wholesale, Retailer.
+| Features  | Magento 2 Categories Extension Free  | Magento 2 Categories Extension Pro |
+| :------------: |:---------------:| :-----:|
+| **Display optional subcategories on the other pages**     | Home page, Category page | Home page, Category page, **Product page**, **Shopping Cart page** |
+| **Positions display Categories**      |2 | 18 |
+| **The characteristics of subcategories on pages are independent** | The properties of the subcategory on the homepage and category page differ depending on the 2 independent installers      |  The characteristics of the subcategory on each page can be customized with "Category pro rule" |
+|**Categories Layout** |2 subcategory formats: Grid or List | Grid, List or **Slider**|
+|**Sort the subcategories by** | Name, Page Title, Location, Creation Date |Name, Page Title, Location, Creation Date, **Admin tree** |
+|**The ability to display subcategory with** |Block Title, Description, Thumbnail, Item Amount | Block Title, Description, Thumbnail, Item Amount|
+|Full responsive design | Compatible with devices: laptop, phone, tablet... It will recalculate itself based on parents|Customize Responsive Information |
+|Display different categories with different customers | X|You can display the desired category with different customer groups: Not logged in, General, Wholesale, Retailer |
 
 ![Magento 2 Categories Free](https://github.com/magepow/magento-2-categories/blob/master/media/Mgento-2-category-1.jpg) [![Magento 2 Categories Pro](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-3.jpg)](https://magepow.com/magento-2-categories-extension.html)
 
