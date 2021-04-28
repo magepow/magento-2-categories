@@ -87,15 +87,13 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/paypalme/alopay)
 
 
-**Free Extensions List**
+**Our Magento 2 Extensions List**
 
 * [Magento 2 Recent Sales Notification](https://magepow.com/magento-2-recent-sales-notification.html)
 
 * [Magento 2 Categories Extension](https://magepow.com/magento-categories-extension.html)
 
 * [Magento 2 Sticky Cart](https://magepow.com/magento-sticky-cart.html)
-
-**Premium Extensions List**
 
 * [Magento 2 Pages Speed Optimizer](https://magepow.com/magento-speed-optimizer.html)
 
@@ -106,6 +104,11 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 * [Magento 2 Lookbook Pin Products](https://magepow.com/lookbook-pin-products.html)
 
 **Featured Magento Themes**
+* [Turan Magento 2 Responsive Theme](https://themeforest.net/item/turan-magento-2-responsive-theme-rtl-supported/31335868)
+
+* [Spozy Magento 2 Theme](https://themeforest.net/item/spozy-magento-2-theme-rtl-supported/30176068)
+
+* [Boutique Magento 2 Theme](https://themeforest.net/item/boutique-magento-2-theme-rtl-supported/28858239)
 
 * [Expert Multipurpose responsive Magento 2 Theme](https://1.envato.market/c/1314680/275988/4415?u=https://themeforest.net/item/expert-premium-responsive-magento-2-and-1-support-rtl-magento-2-/21667789)
 
