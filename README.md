@@ -19,8 +19,8 @@ So this extension can help you show on the top of the page the hot categories ar
 |Display optional subcategories on **Product page**|X|:white_check_mark:|
 |Display optional subcategories on **Shopping Cart page**|X|:white_check_mark:|
 |Multiple positions show categories|:white_check_mark:|:white_check_mark:|
-|Subcategory characteristics on homepage and category page vary with 2 independent installers|:white_check_mark:|:white_check_mark:|
-|Subcategory block characteristics on each page can be individually customized using 'Category Pro Rule'|X|:white_check_mark:|
+|Subcategory characteristics on homepage and category page <br /> vary with 2 independent installers|:white_check_mark:|:white_check_mark:|
+|Subcategory block characteristics on each page can be <br /> individually customized using 'Category Pro Rule'|X|:white_check_mark:|
 |**Grid layout**|:white_check_mark:|:white_check_mark:|
 |**List layout**|:white_check_mark:|:white_check_mark:|
 |**Slider layout**|X|:white_check_mark:|
@@ -35,7 +35,7 @@ So this extension can help you show on the top of the page the hot categories ar
 |Display subcategory with **Item Amount**|:white_check_mark:|:white_check_mark:|
 |Full responsive design|:white_check_mark:|:white_check_mark:|
 |Customize Responsive Information|X|:white_check_mark:|
-|Display different categories with different customers (Not logged in, General, Wholesale, Retailer)|X|:white_check_mark:|
+|Display different categories with different customers <br /> (Not logged in, General, Wholesale, Retailer)|X|:white_check_mark:|
 
 [![Magento 2 Categories Free](https://github.com/magepow/magento-2-categories/blob/master/media/Mgento-2-category-4.jpg)](https://magepow.com/magento-2-categories-extension.html) [![Magento 2 Categories Pro](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-3.jpg)](https://magepow.com/magento-2-categories-extension.html)
 
