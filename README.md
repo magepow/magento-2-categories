@@ -39,6 +39,8 @@ So this extension can help you show on the top of the page the hot categories ar
 |Customize Responsive Information|X|:white_check_mark:|
 |Display different categories with customer groups <br /> (Not logged in, General, Wholesale, Retailer)|X|:white_check_mark:|
 
+See more: [Demo free version](https://demo.magepow.com/categories/) - [Demo Pro version](https://demo.magepow.com/categoriespro/)
+
 [![Magento 2 Categories Free](https://github.com/magepow/magento-2-categories/blob/master/media/Mgento-2-category-4.jpg)](https://magepow.com/magento-2-categories-extension.html) [![Magento 2 Categories Pro](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-3.jpg)](https://magepow.com/magento-2-categories-extension.html)
 
 ### 2. How to install Magento 2 SubCategories extension Free
