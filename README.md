@@ -35,7 +35,7 @@ So this extension can help you show on the top of the page the hot categories ar
 |Display subcategory with **Item Amount**|:white_check_mark:|:white_check_mark:|
 |Full responsive design|:white_check_mark:|:white_check_mark:|
 |Customize Responsive Information|X|:white_check_mark:|
-|Display different categories with different customers <br /> (Not logged in, General, Wholesale, Retailer)|X|:white_check_mark:|
+|Display different categories with customer groups <br /> (Not logged in, General, Wholesale, Retailer)|X|:white_check_mark:|
 
 [![Magento 2 Categories Free](https://github.com/magepow/magento-2-categories/blob/master/media/Mgento-2-category-4.jpg)](https://magepow.com/magento-2-categories-extension.html) [![Magento 2 Categories Pro](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-3.jpg)](https://magepow.com/magento-2-categories-extension.html)
 
