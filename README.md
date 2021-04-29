@@ -5,6 +5,8 @@
 
 For example, your online store is selling a wide range of subcategories such as Tops, bottoms, pants, bags, jackets... might dozens of categories but you want when your customers come to your store, you want them to buy or know most of some products types that you concentrate more than normal products. 
 
+![Magento 2 Categories Free](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-5.png)
+
 So this extension can help you show on the top of the page the hot categories are chosen from categories collection or show them on the top of the category pages to recommend to customers.
 
 [![Latest Stable Version](https://poser.pugx.org/magepow/categories/v/stable)](https://packagist.org/packages/magepow/categories)
@@ -39,12 +41,28 @@ So this extension can help you show on the top of the page the hot categories ar
 |Customize Responsive Information|X|:white_check_mark:|
 |Display different categories with customer groups <br /> (Not logged in, General, Wholesale, Retailer)|X|:white_check_mark:|
 
+![Magento 2 Categories Free](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-7.jpg)
+
+Display optional subcategories on Home page
+
+![Magento 2 Categories Free](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-9.jpg)
+
+Display optional subcategories on Category page
+
+![Magento 2 Categories Free](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-8.jpg)
+
+Display optional subcategories on Product page
+
+![Magento 2 Categories Free](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-6.jpg)
+
+Display optional subcategories on Shopping Cart page
+
 See more: [Demo free version](https://demo.magepow.com/categories/) - [Demo Pro version](https://demo.magepow.com/categoriespro/)
 
 [![Magento 2 Categories Free](https://github.com/magepow/magento-2-categories/blob/master/media/Mgento-2-category-4.jpg)](https://magepow.com/magento-2-categories-extension.html) [![Magento 2 Categories Pro](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-3.jpg)](https://magepow.com/magento-2-categories-extension.html)
 
-### 2. How to install Magento 2 SubCategories extension Free
-#### ✓ Install Magepow SubCategories via composer (recommend)
+### 2. How to install Magento 2 Categories extension Free
+#### ✓ Install Magepow Categories via composer (recommend)
 Run the following command in Magento 2 root folder:
 
 ```
@@ -53,7 +71,7 @@ php bin/magento setup:upgrade
 php bin/magento setup:static-content:deploy -f
 ```
 
-### 3. Magepow SubCategories user guide
+### 3. Magepow Categories user guide
 **SubCategories extension free for Magento** allows customers access the categories quickly and conveniently, stimulating users to click on the categories because of the beautiful interface.
 
 #### Enable Magepow Categories
@@ -63,17 +81,19 @@ Select `Yes` to enable module.
 #### Setting Magepow SubCategories
 Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
 
-![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/backend_config.png)
  * Two layouts available (Grid or List).
  * Ability to sort subcategories by "Name", "Page Title", "Position", and "Created Date".
  * Ability to show subcategories heading or not and to type in the heading text.
  * Ability to show or not category description.
  * Select categories that do not display subcategories.
  
-![config-module-img](https://github.com/magepow/magento2-categories/blob/master/media/backend_config.png)
- 
- The home page also has the same settings as the category page, except that the home page can choose the display categories instead of excluding the display category.
+![config-module-img](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-10.jpg)
+
+The home page also has the same settings as the category page, except that the home page can choose the display categories instead of excluding the display category.
  * Select the categories displayed on the home page.
+
+![config-module-img](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-11.jpg)
+
 ### This Is Result In Frontend
 #### In homepage
 
