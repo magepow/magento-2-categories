@@ -17,7 +17,9 @@ So this extension can help you show on the top of the page the hot categories ar
 | Features  | Free Version  | Pro Version |
 | :------------ |:---------------:| :-----:|
 |Display optional subcategories on **Home page**|:white_check_mark:|:white_check_mark:|
+|Display the subcategories as slider layout on the Home page|X|:white_check_mark:|
 |Display optional subcategories on **Category page**|:white_check_mark:|:white_check_mark:|
+|Display the subcategories as slider layout on the Categories page|X|:white_check_mark:|
 |Display optional subcategories on **Product page**|X|:white_check_mark:|
 |Display optional subcategories on **Shopping Cart page**|X|:white_check_mark:|
 |Add or remove categories for the home pape and category pages as desired|:white_check_mark:|:white_check_mark:|
@@ -33,7 +35,7 @@ So this extension can help you show on the top of the page the hot categories ar
 |Sort the subcategories by **Location**|:white_check_mark:|:white_check_mark:|
 |Sort the subcategories by **Creation Date**|:white_check_mark:|:white_check_mark:|
 |Sort the subcategories by **Admin tree**|X|:white_check_mark:|
-|Display subcategory with **Block Title**|X|:white_check_mark:|
+|Display subcategory with **Block Title**|:white_check_mark:|:white_check_mark:|
 |Display subcategory with **Description**|:white_check_mark:|:white_check_mark:|
 |Display subcategory with **Thumbnail**|:white_check_mark:|:white_check_mark:|
 |Display subcategory with **Item Amount**|:white_check_mark:|:white_check_mark:|
