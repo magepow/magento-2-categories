@@ -22,7 +22,7 @@ So this extension can help you show on the top of the page the hot categories ar
 |Display optional subcategories on **Shopping Cart page**|X|:white_check_mark:|
 |Add or remove categories for the home pape and category pages as desired|:white_check_mark:|:white_check_mark:|
 |Add or remove categories on each page as desired|X|:white_check_mark:|
-|Multiple positions show categories|:white_check_mark:|:white_check_mark:|
+|Multiple positions show categories|X|:white_check_mark:|
 |Subcategory characteristics on homepage and category page vary with 2 <br /> independent installers|:white_check_mark:|:white_check_mark:|
 |Subcategory block characteristics on each page can be individually <br /> customized using 'Category Pro Rule'|X|:white_check_mark:|
 |**Grid layout**|:white_check_mark:|:white_check_mark:|
@@ -33,13 +33,14 @@ So this extension can help you show on the top of the page the hot categories ar
 |Sort the subcategories by **Location**|:white_check_mark:|:white_check_mark:|
 |Sort the subcategories by **Creation Date**|:white_check_mark:|:white_check_mark:|
 |Sort the subcategories by **Admin tree**|X|:white_check_mark:|
-|Display subcategory with **Block Title**|:white_check_mark:|:white_check_mark:|
+|Display subcategory with **Block Title**|X|:white_check_mark:|
 |Display subcategory with **Description**|:white_check_mark:|:white_check_mark:|
 |Display subcategory with **Thumbnail**|:white_check_mark:|:white_check_mark:|
 |Display subcategory with **Item Amount**|:white_check_mark:|:white_check_mark:|
 |Full responsive design|:white_check_mark:|:white_check_mark:|
 |Customize Responsive Information|X|:white_check_mark:|
 |Display different categories with customer groups <br /> (Not logged in, General, Wholesale, Retailer)|X|:white_check_mark:|
+|Free Support|X|:white_check_mark:|
 
 ![Magento 2 Categories Free](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-7.jpg)
 
