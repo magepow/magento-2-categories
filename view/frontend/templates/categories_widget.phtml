@@ -23,8 +23,8 @@ $itemAmount  = $block->getItemAmount();
 if (empty($categories)) return;
 $selector     = 'alo-content-'.uniqid(); 
 ?>
-<?php $visible = (int) $this->getData('visible'); $visible++ ?>
-<style type="text/css"><?php echo $this->getData('slide') ? '.' . $selector . ' .item:nth-child(n+' . $visible . '){display: none;} .' . $selector . ' .item{float:left} .' . $selector . ' .grid-slider{display: flex;}' : ''  ?></style>
+<?php $visible = (int) $this->getData('visible'); ?>
+<style type="text/css"><?php echo $this->getData('slide') ? '.' . $selector . ' .item{float:left; width:' . 100/$visible . '%} .'. $selector . ' .item:nth-child(n+' . ++$visible . '){display: none}' : ''  ?></style>
 <?php if ($heading): ?>
     <h3 class="title"><?php echo $heading ?></h3>
 <?php endif; ?>
