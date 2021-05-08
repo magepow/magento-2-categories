@@ -24,5 +24,6 @@
       "psr-4": {
           "Magepow\\Categories\\": ""
       }
-  }
+  },
+  "version": "1.0.0"
 }
