@@ -15,52 +15,61 @@ class Cmspage extends Categories
 {
     const XML_PATH = 'home_page';
 
-    public function getLayout() 
+    public function getLayout()
     {
         return $this->helper->getConfig(self::XML_PATH . '/layout');
     }
 
-    public function getHeading() 
+    public function getHeading()
     {
         return $this->helper->getConfig(self::XML_PATH . '/heading');
-    }    
+    }
 
-    public function isShowDescription() 
+    public function isShowDescription()
     {
         return $this->helper->getConfig(self::XML_PATH . '/description');
-    }    
+    }
 
-    public function isShowThumbnail() 
+    public function isShowThumbnail()
     {
         return $this->helper->getConfig(self::XML_PATH . '/thumbnail');
-    } 
+    }
 
-    public function getItemAmount() 
+    public function getItemAmount()
     {
         return $this->helper->getConfig(self::XML_PATH . '/item_amount');
-    } 
+    }
 
-    public function getSortAttribute() 
+    public function getSortAttribute()
     {
         return $this->helper->getConfig(self::XML_PATH . '/sort_attribute');
-    } 
+    }
 
     public function getCategorySelect()
     {
         return $this->helper->getConfig(self::XML_PATH . '/category_select');
-    } 
+    }
 
     public function getCategories()
     {
         $categoryIds = $this->getCategorySelect();
         if(!$categoryIds) return;
         $sortAttribute = $this->getSortAttribute();
-        $model = $this->categoryFactory->create();      
+        $model = $this->categoryFactory->create();
         $categories = $model->getCollection()
         ->addAttributeToSelect(['name', 'url_key', 'url_path', 'image', 'description'])
-        ->addAttributeToSort($sortAttribute)
         ->addIdFilter($categoryIds)
         ->addIsActiveFilter();
+
+        if( $sortAttribute = $this->getSortAttribute() == "position" ) {
+            // for position also sort by length of the category pah so as to order by parents first, then the children
+            // ref https://github.com/magepow/magento-2-categories/issues/8
+            $categories->getSelect()->order(
+                new \Zend_Db_Expr("CHAR_LENGTH(path), $sortAttribute")
+            );
+        } else {
+            $categories->addAttributeToSort($sortAttribute);
+        }
 
         return $categories;
     }

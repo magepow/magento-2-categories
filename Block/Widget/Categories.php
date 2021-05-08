@@ -35,34 +35,34 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
         $this->addData($data);
         parent::_construct();
     }
-    
+
     public function isShowThumbnail(){
         return $this->getData('thumbnail');
     }
-    
-    public function getLayout() 
+
+    public function getLayout()
     {
         return 'grid';
     }
 
-    public function getHeading() 
+    public function getHeading()
     {
         return $this->getData('title');
-    }    
+    }
 
-    public function isShowDescription() 
+    public function isShowDescription()
     {
         return $this->getData('description');
-    }  
+    }
 
     public function getItemAmount(){
         return $this->getData('item_amount');
-    }  
+    }
 
-    public function getSortAttribute() 
+    public function getSortAttribute()
     {
         return $this->getData('sort_attribute');
-    } 
+    }
 
     public function getCategories()
     {
@@ -70,12 +70,21 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
         $categoryIds = $this->getData('categories');
         if(!$categoryIds) return;
         $sortAttribute = $this->getSortAttribute();
-        $model = $this->categoryFactory->create();      
+        $model = $this->categoryFactory->create();
         $categories = $model->getCollection()
         ->addAttributeToSelect(['name', 'url_key', 'url_path', 'image', 'description'])
-        ->addAttributeToSort($sortAttribute)
         ->addIdFilter($categoryIds)
         ->addIsActiveFilter();
+
+        if( $sortAttribute = $this->getSortAttribute() == "position" ) {
+            // for position also sort by length of the category pah so as to order by parents first, then the children
+            // ref https://github.com/magepow/magento-2-categories/issues/8
+            $categories->getSelect()->order(
+                new \Zend_Db_Expr("CHAR_LENGTH(path), $sortAttribute")
+            );
+        } else {
+            $categories->addAttributeToSort($sortAttribute);
+        }
 
         return $categories;
     }
@@ -91,7 +100,7 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
     }
 
     public function getFrontendCfg()
-    { 
+    {
         if($this->getSlide()) return $this->getSlideOptions();
 
         $this->addData(array('responsive' =>json_encode($this->getGridOptions())));
@@ -108,5 +117,5 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
         }
         return $options;
     }
-    
+
 }

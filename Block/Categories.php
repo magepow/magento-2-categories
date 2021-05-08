@@ -18,13 +18,13 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
     const XML_PATH = 'category_page';
 
     const MEDIA_PATH = 'catalog/category';
-    
+
     public $helper;
 
     public $storeManager;
 
     public $viewAssetRepo;
-    
+
     public $coreRegistry;
 
     public $categoryFactory;
@@ -37,7 +37,7 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
     protected $_imageFactory;
 
     protected $_filesystem;
-    
+
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Framework\Image\AdapterFactory $imageFactory,
@@ -48,7 +48,7 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magepow\Categories\Helper\Data $helper,
         array $data = []
-    ) {    
+    ) {
         $this->storeManager        = $storeManager;
         $this->viewAssetRepo       = $viewAssetRepo;
         $this->coreRegistry        = $coreRegistry;
@@ -84,35 +84,35 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         return [self::DEFAULT_CACHE_TAG, self::DEFAULT_CACHE_TAG . '_' . $categoryId];
     }
 
-    public function getLayout() 
+    public function getLayout()
     {
         return $this->helper->getConfig(self::XML_PATH . '/layout');
     }
 
-    public function getHeading() 
+    public function getHeading()
     {
         return $this->helper->getConfig(self::XML_PATH . '/heading');
-    }    
+    }
 
-    public function isShowDescription() 
+    public function isShowDescription()
     {
         return $this->helper->getConfig(self::XML_PATH . '/description');
-    }    
+    }
 
-    public function isShowThumbnail() 
+    public function isShowThumbnail()
     {
         return $this->helper->getConfig(self::XML_PATH . '/thumbnail');
-    } 
+    }
 
-    public function getItemAmount() 
+    public function getItemAmount()
     {
         return $this->helper->getConfig(self::XML_PATH . '/item_amount');
-    } 
-    
-    public function getSortAttribute() 
+    }
+
+    public function getSortAttribute()
     {
         return $this->helper->getConfig(self::XML_PATH . '/sort_attribute');
-    } 
+    }
 
     public function getExcludeCategory()
     {
@@ -134,14 +134,23 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
 
         if ($this->isExcluded($categoryId)) return;
 
-        $sortAttribute = $this->getSortAttribute();  
+        $sortAttribute = $this->getSortAttribute();
         $model = $this->categoryFactory->create();
         $categories = $model->getCollection()
         ->addAttributeToSelect(['name', 'url_key', 'url_path', 'image','description'])
         // ->addAttributeToFilter('include_in_menu', 1)
         ->addAttributeToFilter('parent_id', $categoryId)
-        ->addAttributeToSort($sortAttribute)
         ->addIsActiveFilter();
+
+        if( $sortAttribute = $this->getSortAttribute() == "position" ) {
+            // for position also sort by length of the category pah so as to order by parents first, then the children
+            // ref https://github.com/magepow/magento-2-categories/issues/8
+            $categories->getSelect()->order(
+                new \Zend_Db_Expr("CHAR_LENGTH(path), $sortAttribute")
+            );
+        } else {
+            $categories->addAttributeToSort($sortAttribute);
+        }
 
         return $categories;
     }
@@ -206,7 +215,7 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         }
         return $url;
     }
-    
+
     public function isExcluded($id)
     {
         $excluded = explode(',', $this->getExcludeCategory());
