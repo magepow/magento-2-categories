@@ -21,6 +21,8 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
     
     public $helper;
 
+    public $helperImage;
+
     public $storeManager;
 
     public $viewAssetRepo;
@@ -41,19 +43,19 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Framework\Image\AdapterFactory $imageFactory,
-        \Magento\Framework\View\Asset\Repository $viewAssetRepo,
         \Magento\Framework\Registry $coreRegistry,
         \Magento\Catalog\Model\CategoryFactory $categoryFactory,
+        \Magento\Catalog\Helper\Image $helperImage,
         \Magento\Catalog\Helper\Output $catalogHelperOutput,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magepow\Categories\Helper\Data $helper,
         array $data = []
     ) {    
         $this->storeManager        = $storeManager;
-        $this->viewAssetRepo       = $viewAssetRepo;
         $this->coreRegistry        = $coreRegistry;
         $this->categoryFactory     = $categoryFactory;
         $this->catalogHelperOutput = $catalogHelperOutput;
+        $this->helperImage         = $helperImage;
         $this->_imageFactory       = $imageFactory;
         $this->_filesystem         = $context->getFilesystem();
         $this->_directoryRed       = $this->_filesystem->getDirectoryRead(\Magento\Framework\App\Filesystem\DirectoryList::MEDIA);
@@ -150,8 +152,7 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
     {
         $description = $category->getDescription();
         if ($description) {
-            $categoryDescription = $this->catalogHelperOutput
-            ->categoryAttribute($category, $description, 'description');
+            $categoryDescription = $this->catalogHelperOutput->categoryAttribute($category, $description, 'description');
         } else {
             $categoryDescription = '';
         }
@@ -202,8 +203,9 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         if($image) {
             $url = $this->storeManager->getStore()->getBaseUrl( \Magento\Framework\UrlInterface::URL_TYPE_MEDIA ) . $image;
         } else {
-            $url = $this->viewAssetRepo->getUrl('Magento_Catalog::images/product/placeholder/small_image.jpg');
+            $url = $this->helperImage->getDefaultPlaceholderUrl('small_image');
         }
+
         return $url;
     }
     
