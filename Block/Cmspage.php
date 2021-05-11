@@ -13,6 +13,9 @@ namespace Magepow\Categories\Block;
 
 class Cmspage extends Categories
 {
+
+    const DEFAULT_CACHE_TAG = 'MAGEPOW_CATEGORIES_CMS';
+
     const XML_PATH = 'home_page';
 
     public function getLayout() 
@@ -54,13 +57,18 @@ class Cmspage extends Categories
     {
         $categoryIds = $this->getCategorySelect();
         if(!$categoryIds) return;
-        $sortAttribute = $this->getSortAttribute();
-        $model = $this->categoryFactory->create();      
-        $categories = $model->getCollection()
-        ->addAttributeToSelect(['name', 'url_key', 'url_path', 'image', 'description'])
-        ->addAttributeToSort($sortAttribute)
-        ->addIdFilter($categoryIds)
-        ->addIsActiveFilter();
+
+        $sortAttribute = $this->getSortAttribute();    
+        $categories = $this->categoryFactory->create()->getCollection()
+                            ->addAttributeToSelect(['name', 'url_key', 'url_path', 'image', 'description'])
+                            ->addIdFilter($categoryIds)
+                            ->addIsActiveFilter();
+
+        if($sortAttribute == "position") {
+            $categories->addAttributeToSort('level');
+        }
+
+        $categories->addAttributeToSort($sortAttribute);
 
         return $categories;
     }

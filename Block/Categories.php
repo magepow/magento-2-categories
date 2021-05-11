@@ -128,7 +128,6 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
 
     public function getCategories()
     {
-
         $category = $this->getCurrentCategory();
         if(!$category) return;
 
@@ -136,14 +135,17 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
 
         if ($this->isExcluded($categoryId)) return;
 
-        $sortAttribute = $this->getSortAttribute();  
-        $model = $this->categoryFactory->create();
-        $categories = $model->getCollection()
-        ->addAttributeToSelect(['name', 'url_key', 'url_path', 'image','description'])
-        // ->addAttributeToFilter('include_in_menu', 1)
-        ->addAttributeToFilter('parent_id', $categoryId)
-        ->addAttributeToSort($sortAttribute)
-        ->addIsActiveFilter();
+        $sortAttribute = $this->getSortAttribute();
+        $categories = $this->categoryFactory->create()->getCollection()
+                            ->addAttributeToSelect(['name', 'url_key', 'url_path', 'image','description'])
+                            ->addAttributeToFilter('parent_id', $categoryId)
+                            ->addIsActiveFilter();
+
+        if($sortAttribute == "position") {
+            $categories->addAttributeToSort('level');
+        }
+
+        $categories->addAttributeToSort($sortAttribute);
 
         return $categories;
     }
