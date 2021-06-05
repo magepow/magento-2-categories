@@ -27,6 +27,7 @@ $selector     = 'alo-content-'.uniqid();
 <style type="text/css"><?php echo $this->getData('slide') ? '.' . $selector . ' .item{float:left; width:' . 100/$visible . '%} .'. $selector . ' .item:nth-child(n+' . ++$visible . '){display: none}' : ''  ?></style>
 <?php if ($heading): ?>
     <h3 class="title"><?php echo $heading ?></h3>
+    <p class="text"><span><?= __($this->getData('subtitle')); ?></span></p>
 <?php endif; ?>
 <div class="magepow-categories <?php echo $selector ?>" data-mage-init='{"gridSlider": {}}'>
     <ul class="grid-slider"
