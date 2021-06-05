@@ -19,6 +19,10 @@
                 <label translate="true">Title</label>
                 <value>Magepow Categories Widget</value>
             </parameter>
+            <parameter name="subtitle" xsi:type="text" visible="true" sort_order="0" >
+                <label translate="true">Sub Title</label>
+                <value>Magepow Categories Widget</value>
+            </parameter>
             <parameter name="template" xsi:type="select" required="true" visible="true" sort_order="2">
                 <label translate="true">Template</label>
                 <options>
