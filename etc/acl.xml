@@ -7,7 +7,7 @@
 	            <resource id="Magento_Backend::stores">
 	                <resource id="Magento_Backend::stores_settings">
 	                    <resource id="Magento_Config::config">
-	                        <resource id="Magepow_Categories::config_system" title="Categories" />
+	                        <resource id="Magepow_Categories::config" title="Categories" />
 	                    </resource>
 	                </resource>
 	            </resource>
