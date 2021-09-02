@@ -26,7 +26,8 @@ class SortAttribute implements ArrayInterface
             ['value' => 'name', 'label' => __('Name')],
             ['value' => 'meta_title', 'label' => __('Page Title')],
             ['value' => 'position', 'label' => __('Position')],
-            ['value' => 'created_at', 'label' => __('Created Date')]
+            ['value' => 'created_at', 'label' => __('Created Date')],
+            ['value' => 'custom', 'label' => __('Custom Sort')]
         ];
     }
 }
