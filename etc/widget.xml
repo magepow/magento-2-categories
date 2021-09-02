@@ -71,16 +71,16 @@
             <parameter name="categories" xsi:type="multiselect" visible="true" sort_order="8" source_model="Magepow\Categories\Model\Config\Category">
                 <label translate="true">Categories</label>
             </parameter>
-<!--             <parameter name="category" xsi:type="block" visible="true" required="true" sort_order="10">
-                <label translate="true">Category</label>
-                <block class="Magento\Catalog\Block\Adminhtml\Category\Widget\Chooser">
-                    <data>
-                        <item name="button" xsi:type="array">
-                            <item name="open" xsi:type="string" translate="true">Select Category...</item>
-                        </item>
-                    </data>
-                </block>
-            </parameter> -->
+            <parameter name="custom_sort" xsi:type="text" visible="true" sort_order="8">
+                <label translate="true">Custom Sort</label>
+                <description><![CDATA[<p>Sort by typing down the category id and separating by comma.</p>
+                            <p>Mentioned ids will be sorted from the top, unmentioned ids will queue at the back.</p>
+                            <p>Wrong syntax won't sort.</p>
+                            <p>Right syntax example: 1,2,3,4</p>]]></description>
+                <depends>
+                    <parameter name="sort_attribute" value="custom" />
+                </depends>
+            </parameter>
             <parameter name="slide" xsi:type="select"  visible="true" sort_order="10">
                 <label translate="true">Slide</label>
                 <options>

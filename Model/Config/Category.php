@@ -55,7 +55,7 @@ class Category implements \Magento\Framework\Option\ArrayInterface
             else {
                 $rootCategoryId = $this->_storeManager->getStore($store)->getRootCategoryId();
                 $label = $this->_categoryFactory->create()->load($rootCategoryId)->getName();
-                $categories = array(array('value' => $rootCategoryId, 'label' => $label));
+                $categories = array(array('value' => $rootCategoryId, 'label' => $label.' ('.$rootCategoryId.')'));
             }
             $options = array();
             // $options[] = array('label' => __('All'), 'value' => array(array('label' => __('All'), 'value' => '0')));
@@ -68,7 +68,7 @@ class Category implements \Magento\Framework\Option\ArrayInterface
                         // $rootOption = array('label' => $category['label']);
                         foreach ($_categories as $_category) {
                             $this->_options[] = array(
-                                'label' => self::PREFIX_ROOT .$_category->getName(),
+                                'label' => self::PREFIX_ROOT .$_category->getName().' ('.$_category->getEntityId().')',
                                 'value' => $_category->getEntityId()
                             );
                             if ($_category->hasChildren()) $this->_getChildOptions($_category->getChildren());
@@ -94,7 +94,7 @@ class Category implements \Magento\Framework\Option\ArrayInterface
         foreach ($categories as $category) {
             $prefix = str_repeat(self::REPEATER, $category->getLevel() * 1) . self::PREFIX_END;
             $this->_options[] = array(
-                'label' => $prefix . $category->getName(),
+                'label' => $prefix . $category->getName().' ('.$category->getEntityId().')',
                 'value' => $category->getEntityId()
             );
             if ($category->hasChildren()) $this->_getChildOptions($category->getChildren());

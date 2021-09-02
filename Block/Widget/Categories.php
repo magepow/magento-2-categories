@@ -70,12 +70,29 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
         $categoryIds = $this->getData('categories');
         if(!$categoryIds) return;
         $sortAttribute = $this->getSortAttribute();
+
         $model = $this->categoryFactory->create();      
         $categories = $model->getCollection()
-        ->addAttributeToSelect(['name', 'url_key', 'url_path', 'image', 'description'])
-        ->addAttributeToSort($sortAttribute)
-        ->addIdFilter($categoryIds)
-        ->addIsActiveFilter();
+                            ->addIdFilter($categoryIds)
+                            ->addAttributeToSelect(['name', 'url_key', 'url_path', 'image', 'description']);
+
+        if($sortAttribute == "position") {
+            $categories->addAttributeToSort('level');
+        }elseif($sortAttribute=='custom'){
+            $custom_sort= $this->getData('custom_sort');
+            if(preg_match('/^(\d+,)+\d+$/',$custom_sort)){
+                $custom_sort_arr = [];
+                $categoryIds = explode(',',$categoryIds);
+                $custom_sort_arr = explode(',',$custom_sort);
+                $custom_sort_arr2 = array_merge(array_diff($custom_sort_arr, $categoryIds), array_diff($categoryIds,$custom_sort_arr));
+                $custom_sort_arr = array_merge($custom_sort_arr,$custom_sort_arr2);
+                $categories->getSelect()->order(new \Zend_Db_Expr('FIELD(entity_id,' . implode(',', $custom_sort_arr).')'));
+            }else{
+                $categories->addAttributeToSort('level');
+            }
+        }else{
+            $categories->addAttributeToSort($sortAttribute);
+        }
 
         return $categories;
     }
