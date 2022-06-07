@@ -138,7 +138,7 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         $sortAttribute = $this->getSortAttribute();
         $categories = $this->categoryFactory->create()->getCollection()
                             ->addAttributeToSelect(['name', 'url_key', 'url_path', 'image','description'])
-                            ->addAttributeToFilter('parent_id', $categoryId)
+                            // ->addAttributeToFilter('parent_id', $categoryId)
                             ->addIsActiveFilter();
 
         if($sortAttribute == "position") {
