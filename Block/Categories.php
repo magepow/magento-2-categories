@@ -213,7 +213,7 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
     
     public function isExcluded($id)
     {
-        $excluded = explode(',', $this->getExcludeCategory());
+        $excluded = explode(',', $this->getExcludeCategory() ?? '');
         if (!$excluded) return;
         return in_array($id, $excluded);
     }
