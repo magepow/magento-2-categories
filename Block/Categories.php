@@ -169,7 +169,7 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
             $id = $category->getId();
             $category = $this->categoryFactory->create();
             $category->load($id);
-            $image = $category->getData('magepow_thumbnail');
+            $image = ($category->getData('magepow_thumbnail') != NULL) ? $category->getData('magepow_thumbnail') : '';
         }
         return $this->getImageUrl($image);
     }
