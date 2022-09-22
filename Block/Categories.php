@@ -196,11 +196,11 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         if(is_object($image)){
             $image = $image->getImage();
         }
-        if(strpos($image, "media/"))$image = strstr($image,'/media');
+        if(strpos($image  ?? '', "media/"))$image = strstr($image,'/media');
         elseif($image!=NULL){
             $image = 'catalog/category/'.$image;
         }
-        $image = str_replace('media/', '',  $image);
+        $image = str_replace('media/', '',  $image ?? '');
 
         if($image) {
             $url = $this->storeManager->getStore()->getBaseUrl( \Magento\Framework\UrlInterface::URL_TYPE_MEDIA ) . $image;
