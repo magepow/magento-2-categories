@@ -80,9 +80,9 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
             $categories->addAttributeToSort('level');
         }elseif($sortAttribute=='custom'){
             $custom_sort= $this->getData('custom_sort');
-            if(preg_match('/^(\d+,)+\d+$/',$custom_sort)){
+            if(preg_match('/^(\d+,)+\d+$/', (string) $custom_sort)){
                 $custom_sort_arr = [];
-                $categoryIds = explode(',',$categoryIds);
+                $categoryIds = explode(',', (string) $categoryIds);
                 $custom_sort_arr = explode(',',$custom_sort);
                 $custom_sort_arr2 = array_merge(array_diff($custom_sort_arr, $categoryIds), array_diff($categoryIds,$custom_sort_arr));
                 $custom_sort_arr = array_merge($custom_sort_arr,$custom_sort_arr2);
