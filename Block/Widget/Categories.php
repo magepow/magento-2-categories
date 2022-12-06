@@ -83,7 +83,7 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
             if(preg_match('/^(\d+,)+\d+$/', (string) $custom_sort)){
                 $custom_sort_arr = [];
                 $categoryIds = explode(',', (string) $categoryIds);
-                $custom_sort_arr = explode(',',$custom_sort);
+                $custom_sort_arr = explode(',',(string) $custom_sort);
                 $custom_sort_arr2 = array_merge(array_diff($custom_sort_arr, $categoryIds), array_diff($categoryIds,$custom_sort_arr));
                 $custom_sort_arr = array_merge($custom_sort_arr,$custom_sort_arr2);
                 $categories->getSelect()->order(new \Zend_Db_Expr('FIELD(entity_id,' . implode(',', $custom_sort_arr).')'));
