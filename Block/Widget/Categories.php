@@ -36,6 +36,22 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
         parent::_construct();
     }
     
+    public function getCacheKeyInfo()
+    {
+        $keyInfo     =  parent::getCacheKeyInfo();
+        $uniqueId    =  $this->getUniqueId();
+        $keyInfo[]   =  $uniqueId;
+        return $keyInfo;
+    }
+
+    public function getUniqueId()
+    {
+        $categories = $this->getData('categories');
+        $categories = str_replace(" ", "", $categories);
+        $categories = str_replace(",", "_", $categories);
+        return $categories;
+    }
+
     public function isShowThumbnail(){
         return $this->getData('thumbnail');
     }
