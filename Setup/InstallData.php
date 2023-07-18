@@ -9,10 +9,17 @@ use Magento\Catalog\Setup\CategorySetupFactory;
 
 class InstallData implements InstallDataInterface
 {
+
+    /**
+     * @var CategorySetupFactory
+     */
+    private $categorySetupFactory;
+
     public function __construct(CategorySetupFactory $categorySetupFactory)
     {
         $this->categorySetupFactory = $categorySetupFactory;
     }
+
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
         $installer = $setup;
@@ -37,4 +44,5 @@ class InstallData implements InstallDataInterface
         );
         $installer->endSetup();
     }
+
 }
