@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="magepow" translate="label" sortOrder="102">
+        <tab id="magepow" translate="label" sortOrder="1">
             <label>Magepow</label>
         </tab>
         <section id="magepow_categories" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -95,6 +95,14 @@
                     <source_model>Magepow\Categories\Model\Config\Category</source_model>
                     <can_be_empty>1</can_be_empty>
                     <!-- <validate>validate-select</validate> -->
+                </field>
+            </group>
+            <group id="shortcode" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Short code</label>
+                <field id="snippet" translate="label comment" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Snippet</label>
+                    <comment>Copy to code to page or block you want display categories</comment>
+                    <frontend_model>Magepow\Categories\Block\System\Config\Form\Field\Snippet</frontend_model>
                 </field>
             </group>
         </section>
