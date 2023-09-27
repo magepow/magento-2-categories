@@ -41,7 +41,7 @@ $selector     = 'alo-content-'.uniqid();
                 <div class="category-item-info">
                     <div class="category-image-container">
                         <a class="category-url" href="<?php echo $cat->getUrl() ?>">
-                            <img src="<?php echo $this->getImage($cat) ?>" width="<?php echo $image->getOriginalWidth() ?>" height="<?php echo $image->getOriginalHeight() ?>" alt="<?php echo $cat->getName() ?>"/>
+                            <img loading="lazy" src="<?php echo $this->getImage($cat) ?>" width="<?php echo $image->getOriginalWidth() ?>" height="<?php echo $image->getOriginalHeight() ?>" alt="<?php echo $cat->getName() ?>"/>
                         </a>
                     </div>
                     <div class="category-item-details">
