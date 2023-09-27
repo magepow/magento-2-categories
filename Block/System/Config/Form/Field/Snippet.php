@@ -28,7 +28,7 @@ class Snippet extends \Magento\Config\Block\System\Config\Form\Field\Heading
         // $html = $element->getElementHtml();
         $html  = '';
         $value = $element->getData('value');
-        $shortcodeWidget = '{{Block class="Magepow\Categories\Block\Widget\Categories" title="Magepow Categories Widget" subtitle="Magepow Categories Widget" template="categories_widget.phtml" sort_attribute="name" description="1" thumbnail="1" item_amount="1" categories="25,11,22,33" slide="1" vertical="false" infinite="true" autoplay="true" arrows="true" dots="false" speed="300" autoplaySpeed="3000" padding="15" rows="1" mobile="1" portrait="1" landscape="2" tablet="3" notebook="3" laptop="4" desktop="4" widescreen="4" visible="5"}}';
+        $shortcodeWidget = '{{block class="Magepow\Categories\Block\Widget\Categories" title="Magepow Categories Widget" subtitle="Magepow Categories Widget" template="categories_widget.phtml" sort_attribute="name" description="1" thumbnail="1" item_amount="1" categories="25,11,22,33" slide="1" vertical="false" infinite="true" autoplay="true" arrows="true" dots="false" speed="300" autoplaySpeed="3000" padding="15" rows="1" mobile="1" portrait="1" landscape="2" tablet="3" notebook="3" laptop="4" desktop="4" widescreen="4" visible="5"}}';
 
         $html = '<ul class="categories-snippet" style="list-style: none;"><li>';
         $html .= '<p>' . __('Add Widget name "Magiccart Magicslider widget" and set categorie for it.') . '</p>';
