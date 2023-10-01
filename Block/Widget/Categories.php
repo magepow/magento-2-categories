@@ -113,11 +113,6 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
         return $categories;
     }
 
-    public function getResponsiveBreakpoints()
-    {
-        return array(1921=>'visible', 1920=>'widescreen', 1479=>'desktop', 1200=>'laptop', 992=>'notebook', 768=>'tablet', 576=>'landscape', 480=>'portrait', 361=>'mobile', 1=>'mobile');
-    }
-
     public function getSlideOptions()
     {
         return array('autoplay', 'arrows', 'autoplay-Speed', 'dots', 'infinite', 'padding', 'vertical', 'vertical-Swiping', 'responsive', 'rows', 'slides-To-Show');

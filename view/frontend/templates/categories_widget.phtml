@@ -21,27 +21,25 @@ $heading     = $block->getHeading();
 $description = $block->isShowDescription();
 $itemAmount  = $block->getItemAmount();
 if (empty($categories)) return;
-$selector     = 'alo-content-'.uniqid(); 
+$selector     = 'alo-content-' . uniqid();
 ?>
 <?php $visible = (int) $this->getData('visible'); ?>
-<style type="text/css"><?php echo $this->getData('slide') ? '.' . $selector . ' .item{float:left; width:' . 100/$visible . '%} .'. $selector . ' .item:nth-child(n+' . ++$visible . '){display: none}' : ''  ?></style>
-<?php if ($heading): ?>
+<style type="text/css">
+    <?php echo $this->getData('slide') ? '.' . $selector . ' .item{float:left; width:' . 100 / $visible . '%} .' . $selector . ' .item:nth-child(n+' . ++$visible . '){display: none}' : ''  ?>
+</style>
+<?php if ($heading) : ?>
     <h3 class="title"><?php echo $heading ?></h3>
     <p class="text"><span><?= __($this->getData('subtitle')); ?></span></p>
 <?php endif; ?>
 <div class="magepow-categories <?php echo $selector ?>" data-mage-init='{"gridSlider": {}}'>
-    <ul class="grid-slider"
-        <?php foreach ($this->getFrontendCfg() as $opt) :?>
-            data-<?php echo $opt ?>='<?php echo $this->getData($opt) ?>'
-        <?php endforeach;?>
-    >
-        <?php foreach ($categories as $cat): ?>
+    <ul class="grid-slider" <?php foreach ($this->getFrontendCfg() as $opt) : ?> data-<?php echo $opt ?>='<?php echo $this->getData($opt) ?>' <?php endforeach; ?> <?php foreach ($this->getResponsiveBreakpoints() as $opt) : ?> data-<?php echo $opt ?>='<?php echo $this->getData($opt) ?>' <?php endforeach; ?>>
+        <?php foreach ($categories as $cat) : ?>
             <?php $image = $this->getImageInfo($cat); ?>
             <li class="category-item item">
                 <div class="category-item-info">
                     <div class="category-image-container">
                         <a class="category-url" href="<?php echo $cat->getUrl() ?>">
-                            <img loading="lazy" src="<?php echo $this->getImage($cat) ?>" width="<?php echo $image->getOriginalWidth() ?>" height="<?php echo $image->getOriginalHeight() ?>" alt="<?php echo $cat->getName() ?>"/>
+                            <img loading="lazy" src="<?php echo $this->getImage($cat) ?>" width="<?php echo $image->getOriginalWidth() ?>" height="<?php echo $image->getOriginalHeight() ?>" alt="<?php echo $cat->getName() ?>" />
                         </a>
                     </div>
                     <div class="category-item-details">
@@ -50,24 +48,24 @@ $selector     = 'alo-content-'.uniqid();
                                 <span class="category-name"><?php echo $cat->getName() ?></span>
                             </a>
                         </h3>
-                        
-                        <?php if($description): ?>
+
+                        <?php if ($description) : ?>
                             <div class="category-description">
                                 <?php echo $this->getDescription($cat) ?>
                             </div>
                         <?php endif; ?>
-                        <?php if($itemAmount): ?>
+                        <?php if ($itemAmount) : ?>
                             <div class="category-item-amount">
-                                    <?php echo "(".$cat->getProductCollection()->count();
-                                        if($cat->getProductCollection()->count()>0)echo " items)";
-                                        else echo " item)"; 
-                                    ?>
+                                <?php echo "(" . $cat->getProductCollection()->count();
+                                if ($cat->getProductCollection()->count() > 0) echo " items)";
+                                else echo " item)";
+                                ?>
                             </div>
                         <?php endif; ?>
                         <div class="btn-link">
                             <a class="magepow-categories-category" href="<?php echo $cat->getUrl() ?>"><?= $block->escapeHtml(__('Show now')) ?></a>
                         </div>
-                        
+
                     </div>
                 </div>
             </li>
