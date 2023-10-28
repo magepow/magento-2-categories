@@ -58,7 +58,7 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         $this->helperImage         = $helperImage;
         $this->_imageFactory       = $imageFactory;
         $this->_filesystem         = $context->getFilesystem();
-        $this->_directoryRed       = $this->_filesystem->getDirectoryRead(\Magento\Framework\App\Filesystem\DirectoryList::MEDIA);
+        $this->_directoryPub       = $this->_filesystem->getDirectoryRead(\Magento\Framework\App\Filesystem\DirectoryList::PUB);
         $this->helper              = $helper;
 
         parent::__construct($context, $data);
@@ -136,8 +136,10 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         if ($this->isExcluded($categoryId)) return;
 
         $sortAttribute = $this->getSortAttribute();
+        $attributesSelect = ['name', 'url_key', 'url_path', 'image','description'];
+        if($this->isShowThumbnail()) $attributesSelect[] = 'magepow_thumbnail';
         $categories = $this->categoryFactory->create()->getCollection()
-                            ->addAttributeToSelect(['name', 'url_key', 'url_path', 'image','description'])
+                            ->addAttributeToSelect($attributesSelect)
                             ->addAttributeToFilter('parent_id', $categoryId)
                             ->addIsActiveFilter();
 
@@ -163,29 +165,30 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
 
     public function getImage($category)
     {
-        if($this->isShowThumbnail()!=1){
-            return $this->getImageUrl($category);
-        }else{
-            $id = $category->getId();
-            $category = $this->categoryFactory->create();
-            $category->load($id);
-            $image = ($category->getData('magepow_thumbnail') != NULL) ? $category->getData('magepow_thumbnail') : '';
+        if($this->isShowThumbnail()){
+            $image = ($category->getData('magepow_thumbnail')) ? $category->getData('magepow_thumbnail') : '';
+            return $this->getImageUrl($image);
         }
-        return $this->getImageUrl($image);
+
+        return $this->getImageUrl($category);
     }
 
     public function getImageInfo($image)
     {
         if(is_object($image)){
-            $img = $image->getImage();
+            $img = $this->isShowThumbnail() ? $image->getData('magepow_thumbnail'): $image->getImage();
             if(!$img) return $image;
         } else {
             $img = $image;
         }
         $_image  = $this->_imageFactory->create();
-        $absPath = $this->_directoryRed->getAbsolutePath() . str_replace('/pub/media/', '',  $img);
-        if(file_exists($absPath) ){
-            $_image->open($absPath);
+        $mediaPath = $this->_directoryPub->getAbsolutePath();
+        $mediaPath = explode(DIRECTORY_SEPARATOR, $mediaPath);
+        $img = explode(DIRECTORY_SEPARATOR, $img);
+        $imagePath = array_unique(array_merge($mediaPath, $img));
+        $imagePath = implode(DIRECTORY_SEPARATOR, $imagePath);
+        if(file_exists($imagePath) ){
+            $_image->open($imagePath);
             return $_image;
         }
         return $image;

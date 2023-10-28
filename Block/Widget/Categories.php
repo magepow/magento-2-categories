@@ -87,10 +87,12 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
         if(!$categoryIds) return;
         $sortAttribute = $this->getSortAttribute();
 
-        $model = $this->categoryFactory->create();      
-        $categories = $model->getCollection()
-                            ->addIdFilter($categoryIds)
-                            ->addAttributeToSelect(['name', 'url_key', 'url_path', 'image', 'description']);
+        $attributesSelect = ['name', 'url_key', 'url_path', 'image','description'];
+        if($this->isShowThumbnail()) $attributesSelect[] = 'magepow_thumbnail';
+        $categories = $this->categoryFactory->create();    
+        $categories = $categories->getCollection()
+                            ->addAttributeToSelect($attributesSelect)
+                            ->addIdFilter($categoryIds);
 
         if($sortAttribute == "position") {
             $categories->addAttributeToSort('level');
