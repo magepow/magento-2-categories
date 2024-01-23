@@ -58,17 +58,24 @@ class Cmspage extends Categories
         $categoryIds = $this->getCategorySelect();
         if(!$categoryIds) return;
 
-        $sortAttribute = $this->getSortAttribute();    
+        $sortAttribute = $this->getSortAttribute();
         $categories = $this->categoryFactory->create()->getCollection()
                             ->addAttributeToSelect(['name', 'url_key', 'url_path', 'image', 'description'])
                             ->addIdFilter($categoryIds)
                             ->addIsActiveFilter();
 
-        if($sortAttribute == "position") {
-            $categories->addAttributeToSort('level');
+        switch ($sortAttribute) {
+            case 'position':
+                $categories->addAttributeToSort('level');
+                break;
+            case 'custom':
+                // will sort as per order of Id's set in config value: magepow_categories/home_page/category_select
+                $categories->getSelect()->order(new \Zend_Db_Expr('FIELD(e.entity_id,' . $categoryIds . ')'));
+                break;
+            default:
+                $categories->addAttributeToSort($sortAttribute);
+                break;
         }
-
-        $categories->addAttributeToSort($sortAttribute);
 
         return $categories;
     }
