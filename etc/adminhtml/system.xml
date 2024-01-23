@@ -32,7 +32,7 @@
                 <field id="heading" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Categories Heading</label>
                     <comment>Categories heading text.</comment>
-                    <backend_model>Magepow\Categories\Model\Config\Heading</backend_model>
+                    <validate>validate-no-html-tags</validate>
                 </field>
                 <field id="description" translate="label comment" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Show Description</label>
@@ -72,7 +72,7 @@
                 <field id="heading" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Categories Heading</label>
                     <comment>Categories heading text.</comment>
-                    <backend_model>Magepow\Categories\Model\Config\Heading</backend_model>
+                    <validate>validate-no-html-tags</validate>
                 </field>
                 <field id="description" translate="label comment" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Show Description</label>
