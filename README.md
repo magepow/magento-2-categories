@@ -94,7 +94,14 @@ Go to `Admin Panel > Stores > Settings > Configuration > Magepow > Categories`
  
 ![config-module-img](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-10.jpg)
 
-The home page also has the same settings as the category page, except that the home page can choose the display categories instead of excluding the display category.
+The home page also has the same settings as the category page, except that: 
+
+* The home page can choose the display categories instead of excluding the display category.
+* The home page can order the categories by 'custom sort', which will display in the order ids appear in the config value.
+   You can curate this by manually setting the ids in the env.php file to override admin based config.
+   ```
+   ./bin/magento config:set -e magepow_categories/home_page/category_select "64,72,73,1052,68,69,70,1046,65,88,311"
+   ``` 
  * Select the categories displayed on the home page.
 
 ![config-module-img](https://github.com/magepow/magento-2-categories/blob/master/media/magento-2-categories-11.jpg)
