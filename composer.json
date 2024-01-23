@@ -2,7 +2,8 @@
   "name": "magepow/categories",
   "description": "Shows categories in the form of a grid or list, on category pages, home page or any other page.",
   "require": {
-    "magepow/core": "^1.0.0"
+    "magepow/core": "^1.0.0",
+    "magento/framework": ">=103.0.6"
   },
   "type": "magento2-module",
   "license": [
