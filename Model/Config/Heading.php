@@ -5,8 +5,8 @@
  * @licence: http://www.magepow.com/license-agreement
  * @author: MichaelHa
  * @create date: 2019-11-29 17:19:50
- * @LastEditors: MichaelHa
- * @LastEditTime: 2019-12-04 11:05:45
+ * @LastEditors: ProxiBlue
+ * @LastEditTime: 2024-01-23
  */
 
 namespace Magepow\Categories\Model\Config;
@@ -22,13 +22,11 @@ class Heading extends \Magento\Framework\App\Config\Value
     public function beforeSave()
     {
         $value = $this->getValue();
-        $validator = \Zend_Validate::is(
-            $value,
-            'Regex',
+        $validator = new \Laminas\Validator\Regex(
             ['pattern' => '/^[\p{L}\p{N}_,;:!&#\+\*\$\?\|\'\.\-\ ]*$/iu']
         );
         
-        if (!$validator) {
+        if (!$validator->isValid($value)) {
             $message = __(
                 'Please correct categories heading: "%1".',
                 $value
