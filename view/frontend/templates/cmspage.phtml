@@ -33,33 +33,33 @@ $itemAmount       = $block->getItemAmount();
                 <div class="category-image-container">
                     <a class="magepow-categories-category" href="<?php echo $cat->getUrl() ?>">
                         <div class="magepow-categories-category-image">
-                            <img loading="lazy" src="<?php  echo $this->getImage($cat) ?>" alt="<?php echo $cat->getName() ?>"/>
+                            <img loading="lazy" src="<?php  echo $block->getImage($cat) ?>" alt="<?= $block->escapeHtml($cat->getName()) ?>"/>
                         </div>
                         <div class="magepow-categories-category-name">
-                            <span><?php echo $cat->getName() ?></span>
+                            <span><?= $block->escapeHtml($cat->getName()) ?></span>
                         </div>
                     </a>
                 </div>
-                
+
                 <?php if($description): ?>
                     <div class="magepow-categories-category-description">
-                        <?php echo $this->getDescription($cat) ?>
+                        <?php echo $block->getDescription($cat) ?>
                     </div>
                 <?php endif; ?>
                 <?php if($itemAmount): ?>
                         <div class="category-item-amount">
                                 <?php echo "(".$cat->getProductCollection()->count();
                                     if($cat->getProductCollection()->count()>0)echo " items)";
-                                    else echo " item)"; 
+                                    else echo " item)";
                                 ?>
                         </div>
                 <?php endif; ?>
                 <div class="btn-link">
                     <a class="magepow-categories-category" href="<?php echo $cat->getUrl() ?>"><?= $block->escapeHtml(__('Show now')) ?></a>
-                </div>               
+                </div>
             </div>
-           
-            
+
+
         </li>
     <?php endforeach; ?>
 </ul>

@@ -18,40 +18,40 @@ class Cmspage extends Categories
 
     const XML_PATH = 'home_page';
 
-    public function getLayout() 
+    public function getLayout()
     {
         return $this->helper->getConfig(self::XML_PATH . '/layout');
     }
 
-    public function getHeading() 
+    public function getHeading()
     {
         return $this->helper->getConfig(self::XML_PATH . '/heading');
-    }    
+    }
 
-    public function isShowDescription() 
+    public function isShowDescription()
     {
         return $this->helper->getConfig(self::XML_PATH . '/description');
-    }    
+    }
 
-    public function isShowThumbnail() 
+    public function isShowThumbnail()
     {
         return $this->helper->getConfig(self::XML_PATH . '/thumbnail');
-    } 
+    }
 
-    public function getItemAmount() 
+    public function getItemAmount()
     {
         return $this->helper->getConfig(self::XML_PATH . '/item_amount');
-    } 
+    }
 
-    public function getSortAttribute() 
+    public function getSortAttribute()
     {
         return $this->helper->getConfig(self::XML_PATH . '/sort_attribute');
-    } 
+    }
 
     public function getCategorySelect()
     {
         return $this->helper->getConfig(self::XML_PATH . '/category_select');
-    } 
+    }
 
     public function getCategories()
     {
@@ -60,7 +60,7 @@ class Cmspage extends Categories
 
         $sortAttribute = $this->getSortAttribute();
         $categories = $this->categoryFactory->create()->getCollection()
-                            ->addAttributeToSelect(['name', 'url_key', 'url_path', 'image', 'description'])
+                            ->addAttributeToSelect($this->attributesToSelect)
                             ->addIdFilter($categoryIds)
                             ->addIsActiveFilter();
 

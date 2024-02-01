@@ -18,7 +18,7 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
     const XML_PATH = 'category_page';
 
     const MEDIA_PATH = 'catalog/category';
-    
+
     public $helper;
 
     public $helperImage;
@@ -26,12 +26,14 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
     public $storeManager;
 
     public $viewAssetRepo;
-    
+
     public $coreRegistry;
 
     public $categoryFactory;
 
     public $catalogHelperOutput;
+
+    public $attributesToSelect;
 
     /**
      * @var \Magento\Framework\Image\AdapterFactory
@@ -39,7 +41,7 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
     protected $_imageFactory;
 
     protected $_filesystem;
-    
+
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Framework\Image\AdapterFactory $imageFactory,
@@ -50,7 +52,7 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magepow\Categories\Helper\Data $helper,
         array $data = []
-    ) {    
+    ) {
         $this->storeManager        = $storeManager;
         $this->coreRegistry        = $coreRegistry;
         $this->categoryFactory     = $categoryFactory;
@@ -62,6 +64,19 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         $this->helper              = $helper;
 
         parent::__construct($context, $data);
+
+        $this->attributesToSelect = [
+            'name',
+            'url_key',
+            'url_path',
+            'image',
+            'description'
+        ];
+        if($this->isShowThumbnail()) {
+            $this->attributesToSelect[] = 'magepow_thumbnail';
+            unset($this->attributesToSelect['image']);
+        }
+
     }
 
     protected function getCacheLifetime()
@@ -86,35 +101,35 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         return [self::DEFAULT_CACHE_TAG, self::DEFAULT_CACHE_TAG . '_' . $categoryId];
     }
 
-    public function getLayout() 
+    public function getLayout()
     {
         return $this->helper->getConfig(self::XML_PATH . '/layout');
     }
 
-    public function getHeading() 
+    public function getHeading()
     {
         return $this->helper->getConfig(self::XML_PATH . '/heading');
-    }    
+    }
 
-    public function isShowDescription() 
+    public function isShowDescription()
     {
         return $this->helper->getConfig(self::XML_PATH . '/description');
-    }    
+    }
 
-    public function isShowThumbnail() 
+    public function isShowThumbnail()
     {
         return $this->helper->getConfig(self::XML_PATH . '/thumbnail');
-    } 
+    }
 
-    public function getItemAmount() 
+    public function getItemAmount()
     {
         return $this->helper->getConfig(self::XML_PATH . '/item_amount');
-    } 
-    
-    public function getSortAttribute() 
+    }
+
+    public function getSortAttribute()
     {
         return $this->helper->getConfig(self::XML_PATH . '/sort_attribute');
-    } 
+    }
 
     public function getExcludeCategory()
     {
@@ -136,10 +151,8 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         if ($this->isExcluded($categoryId)) return;
 
         $sortAttribute = $this->getSortAttribute();
-        $attributesSelect = ['name', 'url_key', 'url_path', 'image','description'];
-        if($this->isShowThumbnail()) $attributesSelect[] = 'magepow_thumbnail';
         $categories = $this->categoryFactory->create()->getCollection()
-                            ->addAttributeToSelect($attributesSelect)
+                            ->addAttributeToSelect($this->attributesToSelect)
                             ->addAttributeToFilter('parent_id', $categoryId)
                             ->addIsActiveFilter();
 
@@ -213,7 +226,7 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
 
         return $url;
     }
-    
+
     public function isExcluded($id)
     {
         $excluded = explode(',', $this->getExcludeCategory() ?? '');
