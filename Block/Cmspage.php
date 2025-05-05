@@ -67,6 +67,7 @@ class Cmspage extends Categories
         switch ($sortAttribute) {
             case 'position':
                 $categories->addAttributeToSort('level');
+                $categories->addAttributeToSort($sortAttribute);
                 break;
             case 'custom':
                 // will sort as per order of Id's set in config value: magepow_categories/home_page/category_select
