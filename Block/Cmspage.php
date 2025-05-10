@@ -20,37 +20,37 @@ class Cmspage extends Categories
 
     public function getLayout()
     {
-        return $this->helper->getConfig(self::XML_PATH . '/layout');
+        return $this->helper->getConfigModule(self::XML_PATH . '/layout');
     }
 
     public function getHeading()
     {
-        return $this->helper->getConfig(self::XML_PATH . '/heading');
+        return $this->helper->getConfigModule(self::XML_PATH . '/heading');
     }
 
     public function isShowDescription()
     {
-        return $this->helper->getConfig(self::XML_PATH . '/description');
+        return $this->helper->getConfigModule(self::XML_PATH . '/description');
     }
 
     public function isShowThumbnail()
     {
-        return $this->helper->getConfig(self::XML_PATH . '/thumbnail');
+        return $this->helper->getConfigModule(self::XML_PATH . '/thumbnail');
     }
 
     public function getItemAmount()
     {
-        return $this->helper->getConfig(self::XML_PATH . '/item_amount');
+        return $this->helper->getConfigModule(self::XML_PATH . '/item_amount');
     }
 
     public function getSortAttribute()
     {
-        return $this->helper->getConfig(self::XML_PATH . '/sort_attribute');
+        return $this->helper->getConfigModule(self::XML_PATH . '/sort_attribute');
     }
 
     public function getCategorySelect()
     {
-        return $this->helper->getConfig(self::XML_PATH . '/category_select');
+        return $this->helper->getConfigModule(self::XML_PATH . '/category_select');
     }
 
     public function getCategories()

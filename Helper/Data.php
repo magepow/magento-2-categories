@@ -13,22 +13,43 @@ namespace Magepow\Categories\Helper;
 
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
-    public $scopeConfig;
 
-    const XML_PATH_MAGEPOW = 'magepow_categories/';
+    /**
+     * @var array
+     */
+    protected $configModule;
     
     public function __construct(
         \Magento\Framework\App\Helper\Context $context
     ) {   
-        $this->scopeConfig         = $context->getScopeConfig();  
+ 
         parent::__construct($context);
+        $this->configModule = $this->getConfig(strtolower($this->_getModuleName()));
     }
 
-    public function getConfig($path)
+    public function getConfig($cfg='')
     {
-        return $this->scopeConfig->getValue(
-            self::XML_PATH_MAGEPOW . $path, 
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
-        );
+        if($cfg) return $this->scopeConfig->getValue( $cfg, \Magento\Store\Model\ScopeInterface::SCOPE_STORE );
+        return $this->scopeConfig;
     }
+
+    public function getConfigModule($cfg='', $value=null)
+    {
+        $values = $this->configModule;
+        if( !$cfg ) return $values;
+        $config  = explode('/', (string) $cfg);
+        $end     = count($config) - 1;
+        foreach ($config as $key => $vl) {
+            if( isset($values[$vl]) ){
+                if( $key == $end ) {
+                    $value = $values[$vl];
+                }else {
+                    $values = $values[$vl];
+                }
+            } 
+
+        }
+        return $value;
+    }
+
 }

@@ -8,10 +8,29 @@
             <category_page>
                 <layout>grid</layout>
                 <sort_attribute>position</sort_attribute>
-                <heading>Categories</heading>
+                <!-- <heading>Category Children</heading> -->
                 <description>0</description>
                 <thumbnail>1</thumbnail>
                 <exclude_category></exclude_category>
+                <slide>1</slide>
+                <vertical>false</vertical>
+                <infinite>true</infinite>
+                <autoplay>true</autoplay>
+                <arrows>true</arrows>
+                <dots>false</dots>
+                <rows>0</rows>
+                <speed>300</speed>
+                <autoplay_speed>3000</autoplay_speed>
+                <padding>15</padding>
+                <mobile>1</mobile>
+                <portrait>2</portrait>
+                <landscape>3</landscape>
+                <tablet>4</tablet>
+                <notebook>5</notebook>
+                <laptop>5</laptop>
+                <desktop>5</desktop>
+                <widescreen>6</widescreen>
+                <visible>6</visible>
             </category_page>
             <home_page>
                 <layout>grid</layout>

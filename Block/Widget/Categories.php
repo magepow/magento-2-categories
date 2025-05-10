@@ -114,29 +114,5 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
 
         return $categories;
     }
-
-    public function getSlideOptions()
-    {
-        return array('autoplay', 'arrows', 'autoplay-Speed', 'dots', 'infinite', 'padding', 'vertical', 'vertical-Swiping', 'responsive', 'rows', 'slides-To-Show');
-    }
-
-    public function getFrontendCfg()
-    { 
-        if($this->getSlide()) return $this->getSlideOptions();
-
-        $this->addData(array('responsive' =>json_encode($this->getGridOptions())));
-        return array('padding', 'responsive');
-
-    }
-
-    public function getGridOptions()
-    {
-        $options = array();
-        $breakpoints = $this->getResponsiveBreakpoints(); ksort($breakpoints);
-        foreach ($breakpoints as $size => $screen) {
-            $options[]= array($size-1 => $this->getData($screen));
-        }
-        return $options;
-    }
     
 }

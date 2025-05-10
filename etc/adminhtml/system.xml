@@ -29,7 +29,7 @@
                     <comment>The way categories are sorted.</comment>
                     <source_model>Magepow\Categories\Model\Config\SortAttribute</source_model>
                 </field>
-                <field id="heading" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="heading" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Categories Heading</label>
                     <comment>Categories heading text.</comment>
                     <validate>validate-no-html-tags</validate>
@@ -55,6 +55,124 @@
                     <source_model>Magepow\Categories\Model\Config\Category</source_model>
                     <can_be_empty>1</can_be_empty>
                 </field>
+                <field id="heading_slide" translate="label comment" sortOrder="9"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Setting Slide (For Category)</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="slide" translate="label comment" type="select" sortOrder="10"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Slide</label>
+                    <comment>Enabled Slide</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="vertical" translate="label comment" type="select" sortOrder="15"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Slide Vertical</label>
+                    <comment>Mode Vertical</comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Truefalse</source_model>
+                    <depends><field id="slide" separator=",">1,3</field></depends>
+                </field>
+                <field id="infinite" translate="label comment" type="select" sortOrder="20"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Infinite</label>
+                    <comment>Infinite</comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Truefalse</source_model>
+                    <depends><field id="slide" separator=",">1</field></depends>
+                </field>
+                <field id="autoplay" translate="label comment" type="select" sortOrder="25"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Auto Play</label>
+                    <comment>Auto Play</comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Truefalse</source_model>
+                    <depends><field id="slide" separator=",">1</field></depends>
+                </field>
+                <field id="arrows" translate="label comment" type="select" sortOrder="30"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Arrows</label>
+                    <comment>Next/Back</comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Truefalse</source_model>
+                    <depends><field id="slide" separator=",">1</field></depends>
+                </field>
+                <field id="dots" translate="label comment" type="select" sortOrder="35"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Dots</label>
+                    <comment>Pager</comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Truefalse</source_model>
+                    <depends><field id="slide" separator=",">1</field></depends>
+                </field>
+                <field id="rows" translate="label comment" type="select" sortOrder="40"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Rows</label>
+                    <comment>Row Item</comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Row</source_model>
+                    <depends><field id="slide" separator=",">1</field></depends>
+                </field>
+                <field id="speed" translate="label comment" type="text" sortOrder="45"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Speed</label>
+                    <comment>Speed</comment>
+                    <validate>validate-zero-or-greater</validate>
+                    <depends><field id="slide" separator=",">1</field></depends>
+                </field>
+                <field id="autoplay_speed" translate="label comment" type="text" sortOrder="50"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>autoplay Speed</label>
+                    <comment>autoplay Speed</comment>
+                    <validate>validate-zero-or-greater</validate>
+                    <depends><field id="slide" separator=",">1</field></depends>
+                </field>
+                <field id="padding" translate="label comment" type="text" sortOrder="55"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Padding</label>
+                    <comment>Padding item Brand</comment>
+                    <validate>validate-zero-or-greater</validate>
+                </field>
+                <field id="heading_responsive" translate="label comment" sortOrder="60"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Setting Responsive (For Widget)</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="mobile" translate="label comment" type="select" sortOrder="70"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label><![CDATA[max-width 360: ]]></label>
+                    <comment><![CDATA[Number product show in screen ( Size <= 360 ) ]]></comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Col</source_model>
+                    <validate>required-entry validate-greater-than-zero</validate>
+                </field>
+                <field id="portrait" translate="label comment" type="select" sortOrder="75"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label><![CDATA[max-width 480: ]]></label>
+                    <comment><![CDATA[Number product show in screen ( 360 < Size < 480 ) ]]></comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Col</source_model>
+                    <validate>required-entry validate-greater-than-zero</validate>
+                </field>
+                <field id="landscape" translate="label comment" type="select" sortOrder="80"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label><![CDATA[max-width 640: ]]></label>
+                    <comment><![CDATA[Number product show in screen ( 480 <= Size < 640 ) ]]></comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Col</source_model>
+                    <validate>required-entry validate-greater-than-zero</validate>
+                </field>
+                <field id="tablet" translate="label comment" type="select" sortOrder="85"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label><![CDATA[max-width 768: ]]></label>
+                    <comment><![CDATA[Number product show in screen ( 640 <= Size < 768 ) ]]></comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Col</source_model>
+                    <validate>required-entry validate-greater-than-zero</validate>
+                </field>
+                <field id="notebook" translate="label comment" type="select" sortOrder="90"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label><![CDATA[max-width 991: ]]></label>
+                    <comment><![CDATA[Number product show in screen ( 768 <= Size < 992 ) ]]></comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Col</source_model>
+                    <validate>required-entry validate-greater-than-zero</validate>
+                </field>
+                <field id="laptop" translate="label comment" type="select" sortOrder="95"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label><![CDATA[max-width 1199: ]]></label>
+                    <comment><![CDATA[Number product show in screen ( 992 <= Size < 1200 ) ]]></comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Col</source_model>
+                    <validate>required-entry validate-greater-than-zero</validate>
+                </field>
+                <field id="desktop" translate="label comment" type="select" sortOrder="100"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label><![CDATA[max-width 1479: ]]></label>
+                    <comment><![CDATA[Number product show in screen ( 1200 <= Size < 1480 ) ]]></comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Col</source_model>
+                </field>
+                <field id="widescreen" translate="label comment" type="select" sortOrder="105"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label><![CDATA[max-width 1919: ]]></label>
+                    <comment><![CDATA[Number product show in screen ( 1366 <= Size < 1920 ) ]]></comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Col</source_model>
+                </field>
+                <field id="visible" translate="label comment" type="select" sortOrder="110"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label><![CDATA[min-width 1920: ]]></label>
+                    <comment><![CDATA[Number product show in screen ( Size >= 1920 ) ]]></comment>
+                    <source_model>Magepow\Categories\Model\Config\Source\Col</source_model>
+                </field>
+
             </group>
             
             <group id="home_page" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -69,7 +187,7 @@
                     <comment>The way categories are sorted.</comment>
                     <source_model>Magepow\Categories\Model\Config\SortAttribute</source_model>
                 </field>
-                <field id="heading" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="heading" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Categories Heading</label>
                     <comment>Categories heading text.</comment>
                     <validate>validate-no-html-tags</validate>

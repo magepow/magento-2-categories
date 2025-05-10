@@ -21,43 +21,52 @@ $layout           = $block->getLayout();
 $heading          = $block->getHeading();
 $description      = $block->isShowDescription();
 $itemAmount       = $block->getItemAmount();
+$selector         = 'alo-content-' . uniqid();
 ?>
 <?php if (!is_countable($categories) || empty(count($categories))) return; ?>
+
 <?php if ($heading): ?>
     <h3 class="magepow-categories-heading"><?php echo $heading ?></h3>
 <?php endif; ?>
-<ul class="magepow-categories-<?php echo $layout ?>">
-    <?php foreach ($categories as $cat): ?>
-        <li class="magepow-categories-category-wrapper">
-            <div class="magepow-categories-category-info">
-                <div class="category-image-container">
-                    <a class="magepow-categories-category" href="<?php echo $cat->getUrl() ?>">
-                        <div class="magepow-categories-category-image">
-                            <img loading="lazy" src="<?php echo $block->getImage($cat) ?>" alt="<?= $block->escapeHtml($cat->getName()) ?>"/>
-                        </div>
-                        <div class="magepow-categories-category-name">
-                            <span><?= $block->escapeHtml($cat->getName()) ?></span>
-                        </div>
-                    </a>
-                </div>
-                <?php if($description): ?>
-                    <div class="magepow-categories-category-description">
-                        <?= $this->getDescription($cat) ?>
+<div class="sub-categories mb-30 mb-lg-60 <?php echo $selector ?>" data-mage-init='{"gridSlider": {}}'>
+    <div class="container">
+    <ul class="grid-slider row magepow-categories-<?php echo $layout ?>" <?php foreach ($this->getFrontendCfg() as $opt) : ?> data-<?php echo $opt ?>='<?php echo $this->getData($opt) ?>' <?php endforeach; ?> <?php foreach ($this->getResponsiveBreakpoints() as $opt) : ?> data-<?php echo $opt ?>='<?php echo $this->getData($opt) ?>' <?php endforeach; ?>>
+        <?php foreach ($categories as $cat): ?>
+            <li class="category-item item">
+                <div class="category-item-info">
+                    <div class="category-image-container">
+                        <a class="magepow-categories-category" href="<?php echo $cat->getUrl() ?>">
+                            <div class="category-item-image mb-15 rounded-10 overflow-hidden d-flex">
+                                <img loading="lazy" src="<?php echo $block->getImage($cat) ?>" alt="<?= $block->escapeHtml($cat->getName()) ?>"/>
+                            </div>
+                            <div class="category-item-name">
+                                <span><?= $block->escapeHtml($cat->getName()) ?></span>
+                            </div>
+                        </a>
                     </div>
-                <?php endif; ?>
-                <?php if($itemAmount): ?>
-                        <div class="category-item-amount">
-                                <?php echo "(".$cat->getProductCollection()->count();
-                                    if($cat->getProductCollection()->count()>0)echo " items)";
-                                    else echo " item)";
-                                ?>
+                    <?php if($description): ?>
+                        <div class="category-item-description">
+                            <?= $this->getDescription($cat) ?>
                         </div>
-                <?php endif; ?>
-                <div class="btn-link">
-                    <a class="magepow-categories-category" href="<?php echo $cat->getUrl() ?>"><?= $block->escapeHtml(__('Show now')) ?></a>
+                    <?php endif; ?>
+                    <?php if($itemAmount): ?>
+                            <div class="category-item-amount">
+                                    <?php echo "(".$cat->getProductCollection()->count();
+                                        if($cat->getProductCollection()->count()>0)echo " items)";
+                                        else echo " item)";
+                                    ?>
+                            </div>
+                    <?php endif; ?>
+                    <? /** 
+                        <div class="btn-link">
+                            <a href="<?php echo $cat->getUrl() ?>"><?= $block->escapeHtml(__('Show now')) ?></a>
+                        </div>
+                    */ ?>
+                    
                 </div>
-            </div>
 
-        </li>
-    <?php endforeach; ?>
-</ul>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    </div>
+</div>

@@ -11,6 +11,8 @@
 
 namespace Magepow\Categories\Block;
 
+use \Magepow\Categories\Model\Config\Source\Responsive;
+
 class Categories extends \Magento\Framework\View\Element\Template implements \Magento\Framework\DataObject\IdentityInterface
 {
     const DEFAULT_CACHE_TAG = 'MAGEPOW_CATEGORIES';
@@ -41,6 +43,34 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
     protected $_imageFactory;
 
     protected $_filesystem;
+
+    protected function _construct()
+    {
+        $data = $this->helper->getConfigModule(self::XML_PATH);
+        //$dataConvert = array('infinite', 'vertical', 'autoplay', 'centerMode');
+        if($data['slide']){
+            $data['vertical-Swiping'] = $data['vertical'];
+            $breakpoints = $this->getResponsiveBreakpoints();
+            $responsive = '[';
+            $num = count($breakpoints);
+            foreach ($breakpoints as $size => $opt) {
+                $item = (int) $data[$opt];
+                $responsive .= '{"breakpoint": '.$size.', "settings": {"slidesToShow": '.$item.'}}';
+                $num--;
+                if($num) $responsive .= ', ';
+            }
+            $responsive .= ']';
+            $data['slides-To-Show'] = $data['visible'];
+            $data['autoplay-Speed'] = $data['autoplay_speed'];
+            $data['swipe-To-Slide'] = 'true';
+            $data['responsive'] = $responsive;
+        }
+
+        $this->addData($data);
+
+        parent::_construct();
+
+    }
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -103,37 +133,37 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
 
     public function getLayout()
     {
-        return $this->helper->getConfig(self::XML_PATH . '/layout');
+        return $this->helper->getConfigModule(self::XML_PATH . '/layout');
     }
 
     public function getHeading()
     {
-        return $this->helper->getConfig(self::XML_PATH . '/heading');
+        return $this->helper->getConfigModule(self::XML_PATH . '/heading');
     }
 
     public function isShowDescription()
     {
-        return $this->helper->getConfig(self::XML_PATH . '/description');
+        return $this->helper->getConfigModule(self::XML_PATH . '/description');
     }
 
     public function isShowThumbnail()
     {
-        return $this->helper->getConfig(self::XML_PATH . '/thumbnail');
+        return $this->helper->getConfigModule(self::XML_PATH . '/thumbnail');
     }
 
     public function getItemAmount()
     {
-        return $this->helper->getConfig(self::XML_PATH . '/item_amount');
+        return $this->helper->getConfigModule(self::XML_PATH . '/item_amount');
     }
 
     public function getSortAttribute()
     {
-        return $this->helper->getConfig(self::XML_PATH . '/sort_attribute');
+        return $this->helper->getConfigModule(self::XML_PATH . '/sort_attribute');
     }
 
     public function getExcludeCategory()
     {
-        return $this->helper->getConfig(self::XML_PATH . '/exclude_category');
+        return $this->helper->getConfigModule(self::XML_PATH . '/exclude_category');
     }
 
     public function getCurrentCategory()
@@ -236,7 +266,31 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
 
     public function getResponsiveBreakpoints()
     {
-        return array(1921 => 'visible', 1920 => 'widescreen', 1479 => 'desktop', 1200 => 'laptop', 992 => 'notebook', 768 => 'tablet', 576 => 'landscape', 480 => 'portrait', 361 => 'mobile', 1 => 'mobile');
+        return Responsive::getBreakpoints();
+    }
+
+    public function getSlideOptions()
+    {
+        return array('autoplay', 'arrows', 'autoplay-Speed', 'dots', 'infinite', 'padding', 'vertical', 'vertical-Swiping', 'responsive', 'rows', 'slides-To-Show');
+    }
+
+    public function getFrontendCfg()
+    { 
+        if($this->getSlide()) return $this->getSlideOptions();
+
+        $this->addData(array('responsive' =>json_encode($this->getGridOptions())));
+        return array('padding', 'responsive');
+
+    }
+
+    public function getGridOptions()
+    {
+        $options = array();
+        $breakpoints = $this->getResponsiveBreakpoints(); ksort($breakpoints);
+        foreach ($breakpoints as $size => $screen) {
+            $options[]= array($size-1 => $this->getData($screen));
+        }
+        return $options;
     }
 
 }
