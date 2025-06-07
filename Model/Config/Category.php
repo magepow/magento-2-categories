@@ -1,12 +1,12 @@
 <?php
 /*
  * @category: Magepow
- * @copyright: Copyright (c) 2014 Magepow (http://www.magepow.com/)
- * @licence: http://www.magepow.com/license-agreement
+ * @copyright: Copyright (c) 2014 Magepow (https://www.magepow.com/)
+ * @licence: https://www.magepow.com/license-agreement
  * @author: MichaelHa
  * @create date: 2019-11-29 17:19:50
- * @LastEditors: MichaelHa
- * @LastEditTime: 2019-12-04 11:05:42
+ * @LastEditors: Alex
+ * @LastEditTime: 2025-6-07 11:05:42
  */
 
 namespace Magepow\Categories\Model\Config;
@@ -19,85 +19,81 @@ class Category implements \Magento\Framework\Option\ArrayInterface
     const PREFIX_END = '';
 
     /**
-     * @var \Magento\Catalog\Model\CategoryFactory
+     * @var \Magento\Store\Model\StoreManagerInterface $storeManager
      */
-    protected $_categoryFactory;
+    protected $storeManager;
 
     /**
-     * @var \Magento\Catalog\Model\Config\Source\Category
+     * @var \Magento\Catalog\Block\Adminhtml\Category\Tree
      */
-    protected $_category;  
+    protected $categoryTree;
 
-    protected $_request;
+    /**
+     * @var \Magento\Framework\App\RequestInterface
+     */
+    protected $request;
 
-    protected $_storeManager;
-
-    protected  $_options = array();
+    protected $options = [];
 
     public function __construct(
         \Magento\Framework\App\RequestInterface $request,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \Magento\Catalog\Model\CategoryFactory $categoryFactory,
-        \Magento\Catalog\Model\Config\Source\Category $category
+        \Magento\Catalog\Block\Adminhtml\Category\Tree $categoryTree
     )
     {
-        $this->_request = $request;
-        $this->_storeManager = $storeManager;
-        $this->_categoryFactory = $categoryFactory;
-        $this->_category = $category;
+        $this->request = $request;
+        $this->storeManager = $storeManager;
+        $this->categoryTree = $categoryTree;
     }
  
     public function toOptionArray()
     {
-        if(!$this->_options){
-            $store = $this->_request->getParam('store');
-            if(!$store) $categories = $this->_category->toOptionArray();
-            else {
-                $rootCategoryId = $this->_storeManager->getStore($store)->getRootCategoryId();
-                $label = $this->_categoryFactory->create()->load($rootCategoryId)->getName();
-                $categories = array(array('value' => $rootCategoryId, 'label' => $label.' ('.$rootCategoryId.')'));
-            }
-            $options = array();
-            // $options[] = array('label' => __('All'), 'value' => array(array('label' => __('All'), 'value' => '0')));
+        if(!$this->options){
+            $store = $this->request->getParam('store');
+            $categories = $this->categoryTree->getTree();
+            $options = [['label' => __('All'), 'value' => '0']];
             foreach ($categories as $category) {
-                $this->_options = array();
-                if($category['value']) {
-                    // $this->_options[] = array('label' => __('All'), 'value' => '0');
-                    $_categories = $this->_categoryFactory->create()->getCategories($category['value']);
+                $this->options = [];
+                if(isset($category['cls']) && str_contains($category['cls'] , 'no-active')) continue;
+                if($category['id']) {
+                    $this->options[] = ['label' => __('All in "%1"', $category['text']), 'value' => $category['id']];
+                    $_categories = isset($category['children']) ? $category['children'] : '' ;
                     if($_categories){
-                        // $rootOption = array('label' => $category['label']);
-                        foreach ($_categories as $_category) {
-                            $this->_options[] = array(
-                                'label' => self::PREFIX_ROOT .$_category->getName().' ('.$_category->getEntityId().')',
-                                'value' => $_category->getEntityId()
-                            );
-                            if ($_category->hasChildren()) $this->_getChildOptions($_category->getChildren());
+                        // $rootOption = ['label' => $category['label']];
+                        foreach ($_categories as $cat) {
+                            $this->options[] = [
+                                'label' => self::PREFIX_ROOT .$cat['text'],
+                                'value' => $cat['id']
+                            ];
+                            if(isset($cat['cls']) && str_contains($cat['cls'] , 'no-active')) continue;
+                            if (isset($cat['children'])) $this->_getChildOptions($cat['children']);
                         }
-                        // $rootOption['value'] = $this->_options;
+                        // $rootOption['value'] = $this->options;
                         // $options[] = $rootOption;
-                        if($this->_options){
-                            $options[] = array(
-                                'label' => $category['label'],
-                                'value' => $this->_options
-                            );
+                        if($this->options){
+                            $options[] = [
+                                'label' => $category['text'],
+                                'value' => $this->options
+                            ];
                         }
                     }
                 }
             }
-            $this->_options = $options;
+            $this->options = $options;
         }
-        return $this->_options;
+        return $this->options;
     }
  
     protected function _getChildOptions($categories)
     {
         foreach ($categories as $category) {
-            $prefix = str_repeat(self::REPEATER, $category->getLevel() * 1) . self::PREFIX_END;
-            $this->_options[] = array(
-                'label' => $prefix . $category->getName().' ('.$category->getEntityId().')',
-                'value' => $category->getEntityId()
-            );
-            if ($category->hasChildren()) $this->_getChildOptions($category->getChildren());
+            $prefix = str_repeat(self::REPEATER, count(explode("/", $category['path'])) * 1) . self::PREFIX_END;
+            $this->options[] = [
+                'label' => $prefix . $category['text'],
+                'value' => $category['id']
+            ];
+            if(isset($category['cls']) && str_contains($category['cls'] , 'no-active')) continue;
+            if (isset($category['children'])) $this->_getChildOptions($category['children']);
         }
     }
 
