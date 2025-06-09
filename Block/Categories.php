@@ -44,29 +44,33 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
 
     protected $_filesystem;
 
+    protected $isWidget = false;
+
     protected function _construct()
     {
-        $data = $this->helper->getConfigModule(self::XML_PATH);
-        //$dataConvert = array('infinite', 'vertical', 'autoplay', 'centerMode');
-        if($data['slide']){
-            $data['vertical-Swiping'] = $data['vertical'];
-            $breakpoints = $this->getResponsiveBreakpoints();
-            $responsive = '[';
-            $num = count($breakpoints);
-            foreach ($breakpoints as $size => $opt) {
-                $item = (int) $data[$opt];
-                $responsive .= '{"breakpoint": '.$size.', "settings": {"slidesToShow": '.$item.'}}';
-                $num--;
-                if($num) $responsive .= ', ';
+        if(!$this->isWidget){
+            $data = $this->helper->getConfigModule(self::XML_PATH);
+            //$dataConvert = array('infinite', 'vertical', 'autoplay', 'centerMode');
+            if($data['slide']){
+                $data['vertical-Swiping'] = $data['vertical'];
+                $breakpoints = $this->getResponsiveBreakpoints();
+                $responsive = '[';
+                $num = count($breakpoints);
+                foreach ($breakpoints as $size => $opt) {
+                    $item = (int) $data[$opt];
+                    $responsive .= '{"breakpoint": '.$size.', "settings": {"slidesToShow": '.$item.'}}';
+                    $num--;
+                    if($num) $responsive .= ', ';
+                }
+                $responsive .= ']';
+                $data['slides-To-Show'] = $data['visible'];
+                $data['autoplay-Speed'] = $data['autoplay_speed'];
+                $data['swipe-To-Slide'] = 'true';
+                $data['responsive'] = $responsive;
             }
-            $responsive .= ']';
-            $data['slides-To-Show'] = $data['visible'];
-            $data['autoplay-Speed'] = $data['autoplay_speed'];
-            $data['swipe-To-Slide'] = 'true';
-            $data['responsive'] = $responsive;
+    
+            $this->addData($data);
         }
-
-        $this->addData($data);
 
         parent::_construct();
 

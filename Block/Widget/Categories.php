@@ -13,6 +13,8 @@ namespace Magepow\Categories\Block\Widget;
 
 class Categories extends \Magepow\Categories\Block\Categories implements \Magento\Widget\Block\BlockInterface
 {
+    protected $isWidget = true;
+
     protected function _construct()
     {
         $breakpoints = $this->getResponsiveBreakpoints();
