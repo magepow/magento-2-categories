@@ -4,7 +4,7 @@
         <tab id="magepow" translate="label" sortOrder="102">
             <label>Magepow</label>
         </tab>
-        <section id="magepow_categories" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="magepow_categories" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Categories</label>
             <tab>magepow</tab>
             <resource>Magepow_Categories::config</resource>
