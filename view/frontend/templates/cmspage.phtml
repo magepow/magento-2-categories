@@ -33,7 +33,8 @@ $itemAmount       = $block->getItemAmount();
                 <div class="category-image-container">
                     <a class="magepow-categories-category" href="<?php echo $cat->getUrl() ?>">
                         <div class="magepow-categories-category-image">
-                            <img loading="lazy" src="<?php  echo $block->getImage($cat) ?>" alt="<?= $block->escapeHtml($cat->getName()) ?>"/>
+                            <?php $image = $this->getImageInfo($cat); ?>
+                            <img loading="lazy" src="<?php echo $this->getImage($cat) ?>" width="<?php echo $image->getOriginalWidth() ?>" height="<?php echo $image->getOriginalHeight() ?>" alt="<?php echo $cat->getName() ?>"/>
                         </div>
                         <div class="magepow-categories-category-name">
                             <span><?= $block->escapeHtml($cat->getName()) ?></span>

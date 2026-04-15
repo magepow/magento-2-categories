@@ -37,7 +37,8 @@ $selector         = 'alo-content-' . uniqid();
                     <div class="category-image-container">
                         <a class="magepow-categories-category" href="<?php echo $cat->getUrl() ?>">
                             <div class="category-item-image mb-15 rounded-10 overflow-hidden d-flex">
-                                <img loading="lazy" src="<?php echo $block->getImage($cat) ?>" alt="<?= $block->escapeHtml($cat->getName()) ?>"/>
+                                <?php $image = $this->getImageInfo($cat); ?>
+                                <img loading="lazy" src="<?php echo $this->getImage($cat) ?>" width="<?php echo $image->getOriginalWidth() ?>" height="<?php echo $image->getOriginalHeight() ?>" alt="<?php echo $cat->getName() ?>"/>
                             </div>
                             <div class="category-item-name">
                                 <span><?= $block->escapeHtml($cat->getName()) ?></span>
