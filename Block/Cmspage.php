@@ -18,7 +18,7 @@ class Cmspage extends Categories
 
     const XML_PATH = 'home_page';
 
-    public function getLayout()
+    public function getDisplayLayout(): ?string
     {
         return $this->helper->getConfigModule(self::XML_PATH . '/layout');
     }

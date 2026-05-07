@@ -58,7 +58,7 @@ class Categories extends \Magepow\Categories\Block\Categories implements \Magent
         return $this->getData('thumbnail');
     }
     
-    public function getLayout() 
+    public function getDisplayLayout(): ?string
     {
         return 'grid';
     }

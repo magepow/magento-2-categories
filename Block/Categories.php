@@ -135,7 +135,14 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         return [self::DEFAULT_CACHE_TAG, self::DEFAULT_CACHE_TAG . '_' . $categoryId];
     }
 
-    public function getLayout()
+    /**
+     * Get the display layout type (grid/list) from config.
+     *
+     * Renamed from getLayout() to avoid overriding AbstractBlock::getLayout()
+     * which must return LayoutInterface. The collision caused fatal errors when
+     * observers or plugins called $block->getParentBlock() or getLayout().
+     */
+    public function getDisplayLayout(): ?string
     {
         return $this->helper->getConfigModule(self::XML_PATH . '/layout');
     }
