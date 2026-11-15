@@ -52,10 +52,8 @@ $selector         = 'alo-content-' . uniqid();
                     <?php endif; ?>
                     <?php if($itemAmount): ?>
                             <div class="category-item-amount">
-                                    <?php echo "(".$cat->getProductCollection()->count();
-                                        if($cat->getProductCollection()->count()>0)echo " items)";
-                                        else echo " item)";
-                                    ?>
+                                    <?php $productCount = (int) $cat->getProductCollection()->count(); ?>
+                                    <?= "(" . $productCount . ($productCount === 1 ? " item)" : " items)") ?>
                             </div>
                     <?php endif; ?>
                     <?php /** 
