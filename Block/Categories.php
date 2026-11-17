@@ -44,6 +44,11 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
 
     protected $_filesystem;
 
+    /**
+     * @var \Magento\Framework\Filesystem\Directory\ReadInterface
+     */
+    protected $_directoryPub;
+
     protected $isWidget = false;
 
     protected function _construct()
@@ -108,7 +113,7 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         ];
         if($this->isShowThumbnail()) {
             $this->attributesToSelect[] = 'magepow_thumbnail';
-            unset($this->attributesToSelect['image']);
+            $this->attributesToSelect = array_diff($this->attributesToSelect, ['image']);
         }
 
     }
@@ -253,8 +258,10 @@ class Categories extends \Magento\Framework\View\Element\Template implements \Ma
         if(is_object($image)){
             $image = $image->getImage();
         }
-        if(strpos($image  ?? '', "media/"))$image = strstr($image,'/media');
-        elseif($image!=NULL){
+        $mediaPosition = strpos($image ?? '', 'media/');
+        if ($mediaPosition !== false && $mediaPosition > 0) {
+            $image = strstr($image, '/media');
+        } elseif ($image != null) {
             $image = 'catalog/category/'.$image;
         }
         $image = str_replace('media/', '',  $image ?? '');
